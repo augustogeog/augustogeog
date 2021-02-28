@@ -4,8 +4,4 @@ title: About Me
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+I am a Geographer, witha PhD in Urban and Regional Planning. I work with Python and its wonderful Data Science ecosystem to analyze data related to Urban and Regional Planning, Geography and Social Sciences in General.
