@@ -77,7 +77,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      11 min read
     
 </span></p>
 
@@ -117,6 +117,27 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Um pacote ágil, de fácil uso e com resultados interativos.</p>
+<h2 id="O-Ecossistema-PyData-e-seus-pacotes-de-plotagem">O Ecossistema PyData e seus pacotes de plotagem<a class="anchor-link" href="#O-Ecossistema-PyData-e-seus-pacotes-de-plotagem"> </a></h2><p>O ecossistema de Ciência de Dados com Python é conhecido por sua elevada capacidade para auxílio na produção de análises e de modelagem, com base em uma conjunto bastante versátil de ferramentas. Nele temos pacotes para computação científica, análise tabular, plotagem de gráficos, análise de dados geográficos, modelagem estatística, machine Learning, Deep Learning e mais.</p>
+<p>Quando o assunto é pacotes de plotagem, as opções são diversas e muito interessantes: <a href="https://matplotlib.org/"><strong>Matplotlib</strong></a>, <a href="https://seaborn.pydata.org/"><strong>Seaborn</strong></a>, <a href="https://docs.bokeh.org/en/latest/index.html"><strong>Bokeh</strong></a>, <a href="https://plotly.com/python/"><strong>Plotly</strong></a>, <a href="https://plotnine.readthedocs.io/en/stable/"><strong>PlotNine</strong></a>, entre outras. Cada uma
+delas com suas vantagens e desvantagens. Em meio a esse amplo quadro de ferramentas, recentemente tenho buscado ter uma noção bastante geral de cada uma das ferramentas e quando utilizá-las, ao mesmo tempo que busco eleger uma ou duas delas para serem aquelas com as quais mais trabalharei nas consultorias, artigos, aulas, projetos e <em>webapps</em>. É aí que entra <a href="https://altair-viz.github.io/"><strong>Altair</strong></a> - leia alter, tal como você chama o peso da academia, não como o nome do seu tio dono do bar.</p>
+<h2 id="O-que-&#233;-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python">O que &#233; Altair e por que trabalhar com essa ferramenta de plotagem em Python<a class="anchor-link" href="#O-que-&#233;-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python"> </a></h2><p><strong>Altair</strong> é uma ferramenta de plotagem que vem sendo desenvolvida desde 2016 pelo time Altair Developers, que tem participação de desenvolvedores do porte de Brian Granger e Jake VanderPlas, que é um verdadeiro ícone na comunidade PyData. A ferramenta foi utilizada por milhares de analistas e desenvolvedores e é dependência em mais de 8 mil repositórios no <a href="https://github.com/altair-viz/altair/network/dependents?package_id=UGFja2FnZS01MDA2MTA2Nw%3D%3D">GitHub</a>. Trata-se de uma API que gera informações em formato JSON - <a href="https://pt.wikipedia.org/wiki/JSON">JavaScript Object Notation</a> -, que armazenam as especificações para que gráficos sejam renderizados no navegador com base em <a href="https://d3js.org/">D3.js</a>, um poderoso pacote Javascript para plotagem gráfica, muito conhecido por conta de seus produtos interativos criados por times de ponta, como aquele do <a href="https://www.nytimes.com/2019/08/27/learning/looking-for-graphs-to-use-in-the-classroom-here-are-34.html">New York Times</a>.</p>
+<p>Um dos pontos principais de <strong>Altair</strong> é que o seu time de desenvolvedores busca aplicar a gramática de gráficos, idealizada por Leland Wilkinson, no livro <a href="https://www.amazon.com.br/Grammar-Graphics-Leland-Wilkinson/dp/0387245448">The Grammar of Graphics</a>. Basicamente é uma ideia segundo a qual partimos dos dados e vamos fazendo transformações para a sua representação gráfica. Assim, associamos os dados a um tipo de marcador (barra, círculo, tick, linha etc.), codificamos os tipos de dados (quantativos, ordinais, temporais e nominais) a suas variáveis visuais correspondentes (posições nos eixos x ou y, tamanho dos marcadores, variação de forma dos marcadores, cor etc.), alteramos a escala de expressão desses marcadores (indicamos limites nos eixos, inserimos valores mínimo e máximo para o tamanho dos marcadores, mudamos a paleta de cores etc.) e assim por diante.</p>
+<p>Se pensarmos bem, por esse paradigma, fazemos o contrário daquilo que praticamos quando trabalhamos com a API orientada a objeto do Matplotlib, em que declaramos a área do gráfico, inserimos os eixos, nos quais passamos a inserir os demais elementos (marcadores, anotações, rótulos etc.). A intenção, portanto, é que o fluxo de trabalho, com base na gramática de gráficos, auxilie o analista a pensar sobre os dados enquanto está produzindo o gráfico, ao mesmo tempo que conta com uma API de mais fácil utilização do que aquela presente no pacote Matplotlib.</p>
+<p>Cabe destacar outro elemento importante do pacote que, por se basear em D3.js, pode gerar gráficos de fácil carregamento em <em>websites</em> e com interatividade, como mudança de escalas, filtros e apresentação de novas informações como resposta a cliques do usuário. Essa interatividade é, na verdade, a grande razão para eu estar estudando o pacote com mais profundidade. Com Altair, os posts deste blog podem ser dinâmicos, sobretudo com a compatibilidade que o pacote tem com <a href="https://fastpages.fast.ai/"><strong>FastPages</strong></a>, que é a engine que eu estou usando para que meus Jupyter Notebooks facilmente se tornem postagens.</p>
+<h2 id="M&#227;os-&#224;-Obra:-Instalando-e-Importando-Altair">M&#227;os &#224; Obra: Instalando e Importando Altair<a class="anchor-link" href="#M&#227;os-&#224;-Obra:-Instalando-e-Importando-Altair"> </a></h2><p>Mas chega de conversa e mãos à obra!</p>
+<p>Para instalar <strong>Altair</strong> podemos utilizar <a href="https://docs.conda.io/en/latest/">Conda</a> ou o instalador de pacotes Python <a href="https://pt.wikipedia.org/wiki/Pip_(gerenciador_de_pacotes">Pip</a>.
+No terminal podemos utilizar o código abaixo, que também nos permitirá a instalação de alguns conjuntos de dados do pacote Vega.</p>
+<div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">altair</span> <span class="n">vega_datasets</span>
+</pre></div>
+<p><code>Se você não conhece ainda sobre procedimentos para instalação de pacotes, mas quer acompanhar o código adiante, não tem problema. Eu preparei um notebook online para você, na camaradagem. Ainda assim, o assunto é básico e se você não entende de Conda ou Pip, sugiro que volte duas casas e leia a discussão:</code> <a href="https://qastack.com.br/programming/20994716/what-is-the-difference-between-pip-and-conda#:~:text=O%20Pip%20instala%20pacotes%20Python,baixando%20e%20executando%20um%20instalador."><strong>Qual é a diferença entre pip e conda?</strong></a></p>
+<p>A célula importa o pacote Altair sob o alias - "apelido" - alt, e importa o subpacote data do pacote Vega Datasets</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
