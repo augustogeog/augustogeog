@@ -7,16 +7,17 @@
 <title>Plotando Gráficos com Python-Altair | GeoData Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Plotando Gráficos com Python-Altair" />
+<meta name="author" content="Augusto dos Santos Pereira" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Personal Blog about Data Science Tools applied to Urban and Regional Planning, Geography and Social Sciences in General." />
-<meta property="og:description" content="Personal Blog about Data Science Tools applied to Urban and Regional Planning, Geography and Social Sciences in General." />
-<link rel="canonical" href="https://augustogeog.github.io/augustogeog/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html" />
-<meta property="og:url" content="https://augustogeog.github.io/augustogeog/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html" />
+<meta name="description" content="Summary" />
+<meta property="og:description" content="Summary" />
+<link rel="canonical" href="https://augustogeog.github.io/augustogeog/altair/gr%C3%A1ficos/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html" />
+<meta property="og:url" content="https://augustogeog.github.io/augustogeog/altair/gr%C3%A1ficos/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html" />
 <meta property="og:site_name" content="GeoData Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-05-03T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://augustogeog.github.io/augustogeog/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html","@type":"BlogPosting","headline":"Plotando Gráficos com Python-Altair","dateModified":"2021-05-03T00:00:00-05:00","datePublished":"2021-05-03T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html"},"description":"Personal Blog about Data Science Tools applied to Urban and Regional Planning, Geography and Social Sciences in General.","@context":"https://schema.org"}</script>
+{"url":"https://augustogeog.github.io/augustogeog/altair/gr%C3%A1ficos/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html","@type":"BlogPosting","headline":"Plotando Gráficos com Python-Altair","dateModified":"2021-05-03T00:00:00-05:00","datePublished":"2021-05-03T00:00:00-05:00","author":{"@type":"Person","name":"Augusto dos Santos Pereira"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/altair/gr%C3%A1ficos/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html"},"description":"Summary","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/augustogeog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://augustogeog.github.io/augustogeog/feed.xml" title="GeoData Blog" /><link rel="shortcut icon" type="image/x-icon" href="/augustogeog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,9 +72,11 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Plotando Gráficos com Python-Altair</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-03T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Plotando Gráficos com Python-Altair</h1><p class="page-description">Summary</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-03T00:00:00-05:00" itemprop="datePublished">
         May 3, 2021
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Augusto dos Santos Pereira</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -81,6 +84,16 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Altair">Altair</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Gráficos">Gráficos</a>
+        
+      
+      </p>
     
 
     
@@ -108,7 +121,13 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#O-Ecossistema-PyData-e-seus-pacotes-de-plotagem">O Ecossistema PyData e seus pacotes de plotagem </a></li>
+<li class="toc-entry toc-h2"><a href="#O-que-é-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python">O que é Altair e por que trabalhar com essa ferramenta de plotagem em Python </a></li>
+<li class="toc-entry toc-h2"><a href="#Mãos-à-Obra:-Instalando-e-Importando-Altair">Mãos à Obra: Instalando e Importando Altair </a></li>
+<li class="toc-entry toc-h2"><a href="#Obtendo-os-Dados:-Tidy-Data">Obtendo os Dados: Tidy Data </a></li>
+<li class="toc-entry toc-h2"><a href="#Plotando-os-dados-com-Altair">Plotando os dados com Altair </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -117,17 +136,27 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Um pacote ágil, de fácil uso e com resultados interativos.</p>
-<h2 id="O-Ecossistema-PyData-e-seus-pacotes-de-plotagem">O Ecossistema PyData e seus pacotes de plotagem<a class="anchor-link" href="#O-Ecossistema-PyData-e-seus-pacotes-de-plotagem"> </a></h2><p>O ecossistema de Ciência de Dados com Python é conhecido por sua elevada capacidade para auxílio na produção de análises e de modelagem, com base em uma conjunto bastante versátil de ferramentas. Nele temos pacotes para computação científica, análise tabular, plotagem de gráficos, análise de dados geográficos, modelagem estatística, machine Learning, Deep Learning e mais.</p>
+<h2 id="O-Ecossistema-PyData-e-seus-pacotes-de-plotagem">
+<a class="anchor" href="#O-Ecossistema-PyData-e-seus-pacotes-de-plotagem" aria-hidden="true"><span class="octicon octicon-link"></span></a>O Ecossistema PyData e seus pacotes de plotagem<a class="anchor-link" href="#O-Ecossistema-PyData-e-seus-pacotes-de-plotagem"> </a>
+</h2>
+<p>O ecossistema de Ciência de Dados com Python é conhecido por sua elevada capacidade para auxílio na produção de análises e de modelagem, com base em uma conjunto bastante versátil de ferramentas. Nele temos pacotes para computação científica, análise tabular, plotagem de gráficos, análise de dados geográficos, modelagem estatística, machine Learning, Deep Learning e mais.</p>
 <p>Quando o assunto é pacotes de plotagem, as opções são diversas e muito interessantes: <a href="https://matplotlib.org/"><strong>Matplotlib</strong></a>, <a href="https://seaborn.pydata.org/"><strong>Seaborn</strong></a>, <a href="https://docs.bokeh.org/en/latest/index.html"><strong>Bokeh</strong></a>, <a href="https://plotly.com/python/"><strong>Plotly</strong></a>, <a href="https://plotnine.readthedocs.io/en/stable/"><strong>PlotNine</strong></a>, entre outras. Cada uma
 delas com suas vantagens e desvantagens. Em meio a esse amplo quadro de ferramentas, recentemente tenho buscado ter uma noção bastante geral de cada uma das ferramentas e quando utilizá-las, ao mesmo tempo que busco eleger uma ou duas delas para serem aquelas com as quais mais trabalharei nas consultorias, artigos, aulas, projetos e <em>webapps</em>. É aí que entra <a href="https://altair-viz.github.io/"><strong>Altair</strong></a> - leia alter, tal como você chama o peso da academia, não como o nome do seu tio dono do bar.</p>
-<h2 id="O-que-&#233;-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python">O que &#233; Altair e por que trabalhar com essa ferramenta de plotagem em Python<a class="anchor-link" href="#O-que-&#233;-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python"> </a></h2><p><strong>Altair</strong> é uma ferramenta de plotagem que vem sendo desenvolvida desde 2016 pelo time Altair Developers, que tem participação de desenvolvedores do porte de Brian Granger e Jake VanderPlas, que é um verdadeiro ícone na comunidade PyData. A ferramenta foi utilizada por milhares de analistas e desenvolvedores e é dependência em mais de 8 mil repositórios no <a href="https://github.com/altair-viz/altair/network/dependents?package_id=UGFja2FnZS01MDA2MTA2Nw%3D%3D">GitHub</a>. Trata-se de uma API que gera informações em formato JSON - <a href="https://pt.wikipedia.org/wiki/JSON">JavaScript Object Notation</a> -, que armazenam as especificações para que gráficos sejam renderizados no navegador com base em <a href="https://d3js.org/">D3.js</a>, um poderoso pacote Javascript para plotagem gráfica, muito conhecido por conta de seus produtos interativos criados por times de ponta, como aquele do <a href="https://www.nytimes.com/2019/08/27/learning/looking-for-graphs-to-use-in-the-classroom-here-are-34.html">New York Times</a>.</p>
+<h2 id="O-que-é-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python">
+<a class="anchor" href="#O-que-%C3%A9-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>O que é Altair e por que trabalhar com essa ferramenta de plotagem em Python<a class="anchor-link" href="#O-que-%C3%A9-Altair-e-por-que-trabalhar-com-essa-ferramenta-de-plotagem-em-Python"> </a>
+</h2>
+<p><strong>Altair</strong> é uma ferramenta de plotagem que vem sendo desenvolvida desde 2016 pelo time Altair Developers, que tem participação de desenvolvedores do porte de Brian Granger e Jake VanderPlas, que é um verdadeiro ícone na comunidade PyData. A ferramenta foi utilizada por milhares de analistas e desenvolvedores e é dependência em mais de 8 mil repositórios no <a href="https://github.com/altair-viz/altair/network/dependents?package_id=UGFja2FnZS01MDA2MTA2Nw%3D%3D">GitHub</a>. Trata-se de uma API que gera informações em formato JSON - <a href="https://pt.wikipedia.org/wiki/JSON">JavaScript Object Notation</a> -, que armazenam as especificações para que gráficos sejam renderizados no navegador com base em <a href="https://d3js.org/">D3.js</a>, um poderoso pacote Javascript para plotagem gráfica, muito conhecido por conta de seus produtos interativos criados por times de ponta, como aquele do <a href="https://www.nytimes.com/2019/08/27/learning/looking-for-graphs-to-use-in-the-classroom-here-are-34.html">New York Times</a>.</p>
 <p>Um dos pontos principais de <strong>Altair</strong> é que o seu time de desenvolvedores busca aplicar a gramática de gráficos, idealizada por Leland Wilkinson, no livro <a href="https://www.amazon.com.br/Grammar-Graphics-Leland-Wilkinson/dp/0387245448">The Grammar of Graphics</a>. Basicamente é uma ideia segundo a qual partimos dos dados e vamos fazendo transformações para a sua representação gráfica. Assim, associamos os dados a um tipo de marcador (barra, círculo, tick, linha etc.), codificamos os tipos de dados (quantativos, ordinais, temporais e nominais) a suas variáveis visuais correspondentes (posições nos eixos x ou y, tamanho dos marcadores, variação de forma dos marcadores, cor etc.), alteramos a escala de expressão desses marcadores (indicamos limites nos eixos, inserimos valores mínimo e máximo para o tamanho dos marcadores, mudamos a paleta de cores etc.) e assim por diante.</p>
 <p>Se pensarmos bem, por esse paradigma, fazemos o contrário daquilo que praticamos quando trabalhamos com a API orientada a objeto do Matplotlib, em que declaramos a área do gráfico, inserimos os eixos, nos quais passamos a inserir os demais elementos (marcadores, anotações, rótulos etc.). A intenção, portanto, é que o fluxo de trabalho, com base na gramática de gráficos, auxilie o analista a pensar sobre os dados enquanto está produzindo o gráfico, ao mesmo tempo que conta com uma API de mais fácil utilização do que aquela presente no pacote Matplotlib.</p>
 <p>Cabe destacar outro elemento importante do pacote que, por se basear em D3.js, pode gerar gráficos de fácil carregamento em <em>websites</em> e com interatividade, como mudança de escalas, filtros e apresentação de novas informações como resposta a cliques do usuário. Essa interatividade é, na verdade, a grande razão para eu estar estudando o pacote com mais profundidade. Com Altair, os posts deste blog podem ser dinâmicos, sobretudo com a compatibilidade que o pacote tem com <a href="https://fastpages.fast.ai/"><strong>FastPages</strong></a>, que é a engine que eu estou usando para que meus Jupyter Notebooks facilmente se tornem postagens.</p>
-<h2 id="M&#227;os-&#224;-Obra:-Instalando-e-Importando-Altair">M&#227;os &#224; Obra: Instalando e Importando Altair<a class="anchor-link" href="#M&#227;os-&#224;-Obra:-Instalando-e-Importando-Altair"> </a></h2><p>Mas chega de conversa e mãos à obra!</p>
+<h2 id="Mãos-à-Obra:-Instalando-e-Importando-Altair">
+<a class="anchor" href="#M%C3%A3os-%C3%A0-Obra:-Instalando-e-Importando-Altair" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mãos à Obra: Instalando e Importando Altair<a class="anchor-link" href="#M%C3%A3os-%C3%A0-Obra:-Instalando-e-Importando-Altair"> </a>
+</h2>
+<p>Mas chega de conversa e mãos à obra!</p>
 <p>Para instalar <strong>Altair</strong> podemos utilizar <a href="https://docs.conda.io/en/latest/">Conda</a> ou o instalador de pacotes Python <a href="https://pt.wikipedia.org/wiki/Pip_(gerenciador_de_pacotes">Pip</a>.
 No terminal podemos utilizar o código abaixo, que também nos permitirá a instalação de alguns conjuntos de dados do pacote Vega.</p>
 <div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">altair</span> <span class="n">vega_datasets</span>
@@ -145,7 +174,7 @@ No terminal podemos utilizar o código abaixo, que também nos permitirá a inst
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span> <span class="c1">#importanto o pacote altair sob o alias, o &quot;apelido&quot;, alt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span> <span class="c1">#importanto o pacote altair sob o alias, o "apelido", alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span> <span class="c1"># importando o subpacote data, do pacote vega_datasets, para termos acesso a bases de dados interessantes para testes de plotagem</span>
 <span class="o">%</span><span class="k">config</span> Completer.use_jedi = False #Meu notebook está com problemas para autocompletar o código, e este código corrige o problema
 </pre></div>
@@ -157,9 +186,13 @@ No terminal podemos utilizar o código abaixo, que também nos permitirá a inst
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Obtendo-os-Dados:-Tidy-Data">Obtendo os Dados: Tidy Data<a class="anchor-link" href="#Obtendo-os-Dados:-Tidy-Data"> </a></h2><p>Vamos começar por carregar alguns dados para podermos analisar com a ajuda das visualizações possibilitadas pelo Altair. O subpacote <strong>data</strong> apresenta classes que são <em>dataloaders</em>, ou seja, objetos voltados para carregar, como Pandas DataFrame, diferentes tipos de dados disponíveis no pacote Vega Datasets. Entre esses dataloaders, vamos utilizar o <strong>gapminder_health_income</strong> que apresenta dados de diversos países relativos a condições de saúde e renda.</p>
+<h2 id="Obtendo-os-Dados:-Tidy-Data">
+<a class="anchor" href="#Obtendo-os-Dados:-Tidy-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtendo os Dados: Tidy Data<a class="anchor-link" href="#Obtendo-os-Dados:-Tidy-Data"> </a>
+</h2>
+<p>Vamos começar por carregar alguns dados para podermos analisar com a ajuda das visualizações possibilitadas pelo Altair. O subpacote <strong>data</strong> apresenta classes que são <em>dataloaders</em>, ou seja, objetos voltados para carregar, como Pandas DataFrame, diferentes tipos de dados disponíveis no pacote Vega Datasets. Entre esses dataloaders, vamos utilizar o <strong>gapminder_health_income</strong> que apresenta dados de diversos países relativos a condições de saúde e renda.</p>
 <p>Ao chamar o objeto gapminder_health_income, podemos atribuir o dataframe à variável de nossa escolha - df_gapminder, no caso adiante. Em seguida, podemos passar a uma brevíssima exploração dos dados, identificando os registros das cinco primeiras linhas, com o método <code>head()</code>. Fica fácil observar que contamos com quatro atributos: <strong>country</strong> - para os diferentes países -, <strong>income</strong> - para as diferentes faixas de renda-, <strong>health</strong> - para diferentes níveis de expectativa de vida - e <strong>population</strong>, que dispensa apresentações.</p>
 <p>Importante observar que os dados se encontram arranjados como <strong>tidy data</strong>, ou seja, têm formatação ajustada, em que as colunas representam atributos, enquanto as linhas representam diferentes observações. Isso é relevante, pois é essa formatação que é esperada pelo pacote Altair - e também pour outros.</p>
 
@@ -261,7 +294,8 @@ No terminal podemos utilizar o código abaixo, que também nos permitirá a inst
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Para termos um pouco mais de noção da estrutura dos dados, vamos utilizar o método info no dataframe Pandas para identificar quantos valores não núlos, além dos tipos de colunas. Vemos que country é do tipo "object", que é utilizado pelo Pandas para formatos não numéricos, seja string, ou mesmo tipos compostos como listas e dicionários, ao passo que income e população são int64, valores inteiros, e income correspone health corresponde a float64, valores decimais, não havendo valores faltantes na base de dados (os 187 valores estão marcados como non-null).</p>
 
@@ -288,7 +322,7 @@ No terminal podemos utilizar o código abaixo, que também nos permitirá a inst
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 187 entries, 0 to 186
 Data columns (total 4 columns):
  #   Column      Non-Null Count  Dtype  
@@ -309,9 +343,13 @@ memory usage: 6.0+ KB
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Plotando-os-dados-com-Altair">Plotando os dados com Altair<a class="anchor-link" href="#Plotando-os-dados-com-Altair"> </a></h2><p>Abaixo vamos encontrar o gráfico que queremos produzir e adiante vamos tentar replicá-lo, para observamos alguns aspectos básicos de plotagem com Altair.
+<h2 id="Plotando-os-dados-com-Altair">
+<a class="anchor" href="#Plotando-os-dados-com-Altair" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plotando os dados com Altair<a class="anchor-link" href="#Plotando-os-dados-com-Altair"> </a>
+</h2>
+<p>Abaixo vamos encontrar o gráfico que queremos produzir e adiante vamos tentar replicá-lo, para observamos alguns aspectos básicos de plotagem com Altair.
 Ao passarmos o cursor sobre os círculos, uma caixa surge com os dados referentes, que indica a interatividade que queremos obter. De maneira geral, podemos observar que, independente do tamanho populacional, quanto maior a renda de um país, maior a longebidade de seus habitantes.</p>
 <p>´´´Fica aqui a dica para uma das brilhantes palestras de Hans Gosling sobre a relação apresentada no gráfico:´´´ <a href="https://www.youtube.com/watch?v=fJ6y8ZJMoqM">200 países, 200 anos, 4 minutos</a>.</p>
 
@@ -321,25 +359,6 @@ Ao passarmos o cursor sobre os círculos, uma caixa surge com os dados referente
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
-
-<span class="n">chart</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;income&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">120000</span><span class="p">]),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Renda&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;health&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Expectativa de Vida&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">&#39;population:Q&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;População&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;health&#39;</span><span class="p">,</span> <span class="s1">&#39;income&#39;</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">890</span><span class="p">,</span> 
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Relação entre Expectativa de Vida e Renda em Diferentes Países&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span><span class="n">titleFontSize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -408,7 +427,8 @@ Ao passarmos o cursor sobre os círculos, uma caixa surge com os dados referente
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Para construir esse gráfico, vamos pensar de maneira procedimental, separando cada etapa. Primeiro podemos chamar o objeto Chart, utilizando o dataframe df_gapminder como argumento, seguido pelo método mark_circle(), que indica que as marcas gráficas a serem utilizadas serão círculos. Esse objeto será salvo na variável chart.
 Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem pequeno. Isso indica que Altair criou para cada linha do dataframe um circulo. Ou seja, temos 189 círculos plotados, mas de uma forma que não nos traz <em>insight</em>, pois faltam outros elementos gráficos para entendermos as relações entre os diferentes atributos, renda, população e expectativa de vida.</p>
@@ -498,7 +518,8 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Como o gráfico acima não nos traz muita informação, é interessante fazermos com que esses círculos, que representam cada amostra, estejam dispostos conforme o eixo horizontal, x, segundo uma dos atributos do dataframe. Isso é o que aa gramática de gráficos preconiza como <em>encoding</em>, ou codificação, a atribuição de uma variável gráfica (disposição no eixo x, no caso) a um tipo de dado, no caso o atributo quantitativo <em>income</em>.</p>
 <p>Adiante, basta inserirmos um método encode, com o argumento x igual à coluna de nossa escolha.</p>
@@ -513,7 +534,7 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">&#39;income&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">'income'</span><span class="p">)</span>
 <span class="n">chart</span>
 </pre></div>
 
@@ -588,7 +609,8 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Exercício semelhante pode ser feito para o eixo vertical, y.</p>
 
@@ -602,7 +624,7 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">y</span><span class="o">=</span> <span class="s1">&#39;health&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">y</span><span class="o">=</span> <span class="s1">'health'</span><span class="p">)</span>
 <span class="n">chart</span>
 </pre></div>
 
@@ -677,7 +699,8 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ao juntarmos os dois argumentos, temos uma visão bidimensional, em que a renda se encontra no eixo x e longevidade se encontra no eixo y. Os pares de coordenadas formam a posição de cada marcador, que representa cada uma das amostras, ou países.</p>
 
@@ -692,8 +715,8 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span> <span class="c1">#declarando o gráfico com círculos e iniciando o método para fazer a codificação</span>
-    <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;income&#39;</span> <span class="c1"># codificando o atributo income ao eixo x</span>
-    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;health&#39;</span><span class="p">)</span> <span class="c1"># codificando o atributo health ao eixo y</span>
+    <span class="n">x</span><span class="o">=</span> <span class="s1">'income'</span> <span class="c1"># codificando o atributo income ao eixo x</span>
+    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'health'</span><span class="p">)</span> <span class="c1"># codificando o atributo health ao eixo y</span>
 <span class="n">chart</span> <span class="c1"># chamando o gráfico para que seja renderizado</span>
 </pre></div>
 
@@ -768,7 +791,8 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Esse processo de <em>encoding</em> pode ser feito com diversos tipos de variáveis gráficas (posição x ou y, tamanho, cor, forma etc.). Altair também apresenta codificação para elementos interativos, como tooltip, que corresponde à caixa com informações que surge conforme o usuário passa o cursor sobre um círculo.</p>
 
@@ -783,10 +807,10 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span> <span class="c1">#declarando o gráfico com círculos e iniciando o método para fazer a codificação</span>
-    <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;income&#39;</span> <span class="c1"># codificando o atributo income ao eixo x</span>
-    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;health&#39;</span> <span class="c1"># codificando o atributo health ao eixo y</span>
-    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;population&#39;</span> <span class="c1"># codificando o atributo population ao tamanho dos círculos</span>
-    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;health&#39;</span><span class="p">,</span> <span class="s1">&#39;income&#39;</span><span class="p">])</span> <span class="c1"># codificando todos os atributos ao tooltip</span>
+    <span class="n">x</span><span class="o">=</span> <span class="s1">'income'</span> <span class="c1"># codificando o atributo income ao eixo x</span>
+    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'health'</span> <span class="c1"># codificando o atributo health ao eixo y</span>
+    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">'population'</span> <span class="c1"># codificando o atributo population ao tamanho dos círculos</span>
+    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">,</span> <span class="s1">'health'</span><span class="p">,</span> <span class="s1">'income'</span><span class="p">])</span> <span class="c1"># codificando todos os atributos ao tooltip</span>
 <span class="n">chart</span> <span class="c1"># chamando o gráfico para que seja renderizado</span>
 </pre></div>
 
@@ -861,7 +885,8 @@ Note que, ao chamar a variável chart, temos a plotagem de um gráfico bem peque
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>É possível fazer uma grande encadeamento de métodos que criam alterações no gráfico. No entanto, para que isso não se torne confuso, podemos salvar cada etapa na variável chart, o que pode fazer o código se tornar visualmente mais simples, o que permite manutenção mais fácil.
 Uma coisa que podemos notar é que Altair pode receber, como argumentos de codificação, valores bastante simples, como as strings que apontam para o nome das colunas. No entanto, para que possamos ter mais poder de customização, altair conta com alguns objetos chamados de <em>schema wrappers</em>, que permitem maior nível de detalhe nas opções que serão passadas para VegaLite e para renderização. No argumento x, podemos inserir, portanto, o objeto <em>wrappers</em> alt.X, que terá diversos argumentos, que correspondem a opções, como, por exemplo uso de escala logarítmica, possibilidade não iniciar as marcações a partir do zero e título do eixo. Abaixo os argumentos x, y e size receberam <em>wrapers</em> com diversas especificações.</p>
@@ -879,10 +904,10 @@ Uma coisa que podemos notar é que Altair pode receber, como argumentos de codif
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;income:Q&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">120000</span><span class="p">]),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Renda&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;health:Q&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Expectativa de Vida&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">&#39;population:Q&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;População&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;health&#39;</span><span class="p">,</span> <span class="s1">&#39;income&#39;</span><span class="p">]</span>
+    <span class="n">x</span><span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'income:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">120000</span><span class="p">]),</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Renda'</span><span class="p">)</span>
+    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'health:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Expectativa de Vida'</span><span class="p">)</span>
+    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">'population:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">'População'</span><span class="p">)</span>
+    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">,</span> <span class="s1">'health'</span><span class="p">,</span> <span class="s1">'income'</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="n">chart</span>
 </pre></div>
@@ -958,7 +983,8 @@ Uma coisa que podemos notar é que Altair pode receber, como argumentos de codif
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Adiante podemos avançar para alterar algumas propriedades, alterando a largura do gráfico (width),</p>
 
@@ -975,15 +1001,15 @@ Uma coisa que podemos notar é que Altair pode receber, como argumentos de codif
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_gapminder</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;income&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">120000</span><span class="p">]),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Renda&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;health&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Expectativa de Vida&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">&#39;population:Q&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;População&#39;</span><span class="p">)</span>
-    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;health&#39;</span><span class="p">,</span> <span class="s1">&#39;income&#39;</span><span class="p">]</span>
+    <span class="n">x</span><span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'income'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">120000</span><span class="p">]),</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Renda'</span><span class="p">)</span>
+    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'health'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Expectativa de Vida'</span><span class="p">)</span>
+    <span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span><span class="s1">'population:Q'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]),</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">'População'</span><span class="p">)</span>
+    <span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'country'</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">,</span> <span class="s1">'health'</span><span class="p">,</span> <span class="s1">'income'</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">890</span><span class="p">,</span>  <span class="c1"># alteração da largural</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Relação entre Expectativa de Vida e Renda em Diferentes Países&#39;</span> <span class="c1">#inserção de título do gráfico</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">'Relação entre Expectativa de Vida e Renda em Diferentes Países'</span> <span class="c1">#inserção de título do gráfico</span>
 <span class="p">)</span>
 
 <span class="n">chart</span> <span class="o">=</span> <span class="n">chart</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#mudança do tamanho da fonte do título</span>
@@ -1062,7 +1088,8 @@ Uma coisa que podemos notar é que Altair pode receber, como argumentos de codif
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>O gráfico já está muito melhor, servindo como protótipo de produto. Para produto final, diversas questões ainda precisariam de encaminhamento, como ajuste dos limites do eixo X, inserção de valores círculos menores na legenda da População. Ainda assim, já foi o suficiente para conhecermos Altair e alguns de seus recursos básicos.</p>
 
@@ -1073,7 +1100,15 @@ Uma coisa que podemos notar é que Altair pode receber, como argumentos de codif
 
 
 
-  </div><a class="u-url" href="/augustogeog/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="augustogeog/augustogeog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/augustogeog/altair/gr%C3%A1ficos/2021/05/03/Fazendo-Gr%C3%A1ficos-com-Altair.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
