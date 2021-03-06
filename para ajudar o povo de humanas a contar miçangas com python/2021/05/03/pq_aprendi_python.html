@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Por que Aprendi a Operar Ferramentas de Ciência de Dados com Python | AugustoGeog Data Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Por que Aprendi a Operar Ferramentas de Ciência de Dados com Python" />
+<meta name="author" content="Augusto dos Santos Pereira" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ou: A história do pior analista de dados do mundo!" />
+<meta property="og:description" content="Ou: A história do pior analista de dados do mundo!" />
+<link rel="canonical" href="https://augustogeog.github.io/augustogeog/para%20ajudar%20o%20povo%20de%20humanas%20a%20contar%20mi%C3%A7angas%20com%20python/2021/05/03/pq_aprendi_python.html" />
+<meta property="og:url" content="https://augustogeog.github.io/augustogeog/para%20ajudar%20o%20povo%20de%20humanas%20a%20contar%20mi%C3%A7angas%20com%20python/2021/05/03/pq_aprendi_python.html" />
+<meta property="og:site_name" content="AugustoGeog Data Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-03T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://augustogeog.github.io/augustogeog/para%20ajudar%20o%20povo%20de%20humanas%20a%20contar%20mi%C3%A7angas%20com%20python/2021/05/03/pq_aprendi_python.html","@type":"BlogPosting","headline":"Por que Aprendi a Operar Ferramentas de Ciência de Dados com Python","dateModified":"2021-05-03T00:00:00-05:00","datePublished":"2021-05-03T00:00:00-05:00","author":{"@type":"Person","name":"Augusto dos Santos Pereira"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/para%20ajudar%20o%20povo%20de%20humanas%20a%20contar%20mi%C3%A7angas%20com%20python/2021/05/03/pq_aprendi_python.html"},"description":"Ou: A história do pior analista de dados do mundo!","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/augustogeog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://augustogeog.github.io/augustogeog/feed.xml" title="AugustoGeog Data Blog" /><link rel="shortcut icon" type="image/x-icon" href="/augustogeog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/augustogeog/">AugustoGeog Data Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/augustogeog/about/">About Me</a><a class="page-link" href="/augustogeog/search/">Search</a><a class="page-link" href="/augustogeog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Por que Aprendi a Operar Ferramentas de Ciência de Dados com Python</h1><p class="page-description">Ou: A história do pior analista de dados do mundo!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-03T00:00:00-05:00" itemprop="datePublished">
+        May 3, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Augusto dos Santos Pereira</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Para ajudar o povo de humanas a contar miçangas com Python">Para ajudar o povo de humanas a contar miçangas com Python</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#A-Crise">A Crise </a></li>
+<li class="toc-entry toc-h2"><a href="#Um-Momento-de-Inflexão">Um Momento de Inflexão </a></li>
+<li class="toc-entry toc-h2"><a href="#Colhendo-Frutos">Colhendo Frutos </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-05-03-pq_aprendi_python.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-Crise">
+<a class="anchor" href="#A-Crise" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Crise<a class="anchor-link" href="#A-Crise"> </a>
+</h2>
+<p>Após quatro anos de graduação, 2 de mestrado e quatro de doutorado, cheguei a um momento da minha carreira em que olhei para o espelho e pude resumir meu sentimento com uma breve expressão: "mas que belo de um analista chinfrim!". Eu me sentia como se fosse o pior analista do mundo.</p>
+<p>Deixa eu explicar. Não é que eu tenha tido um resultado analítico decepcionante na minha tese. Ela até que recebeu elogios da banca. No entanto, o processo, esse foi muito penoso. É de se esperar que a experiência de um doutoramento seja estressante, sobretudo quando se tem que aliar os estudos com outro trabalho, como é comum no Brasil, diferentemente do que ocorre no ambiente acadêmico de países europeus e dos Estados Unidos, em que o doutorando é um contratado da universidade para exercer uma pesquisa. Ainda assim, restou um sentimento de desapontamento com a alarmante rotina para tratar elevados volumes de dados.</p>
+<p>As bases que utilizei, com microdados da Relação Anual de Informações Sociais, apresetam dados bastante interessantes sobre diversas condições dos trabalhadores em relações formais no Brasil. Dados sobre tipo de ocupação do trabalhador, classe de atividade econômica da empresa, porte da organização, escolaridade etc. foram muito importantes para estabelecer uma comparação nas condições de aprendizado para inovação nos espaços metropolitanos de Curitiba, Porto Alegre e Recife, conforme era meu objetivo. Porém, essa base de microdados é formada por um arquivo para cada unidade da federação para cada ano, desde a década de 1980. Um arquivo apresenta, em média, tamanho superior a 1Gb, com milhões de linhas, cada uma indicando um vínculo trabalhista.</p>
+<p>Para trabalhar com esse volume de dados, a principal ferramenta de meu uso, Excel, não dava conta. No entanto, em nenhum momento, na graduação, mestrado, ou durante o doutorado, eu fui apresentado a ferramentas avançadas de análise de dados com programação. De maneira geral, minhas soluções se baseavam principalmente em Excel. Em casos que automatizações e tratamentos de grandes volumes de dados foram necessários na minha vida profissional, usualmente ocorreu a participação de alguém nas equipes que tinha conhecimento de ferramentas, restando a mim desenhar a metodologia a ser aplicada. A essa altura, eu não imaginava que, ao longo do período do doutoramento eu seria capaz de aprender a utilizar esse tipo de ferramenta em tempo. Meu desconhecimento era tal, que sequer fazer uma plano de estudos parecia inviável. No fim, fiz uma série de bancos de dados em Access, que foram consultados por Excel. Só elaborar a base, demorou um mês. Cada consulta, demorava o tempo de eu ir tomar um café e voltar.</p>
+<h2 id="Um-Momento-de-Inflexão">
+<a class="anchor" href="#Um-Momento-de-Inflex%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>Um Momento de Inflexão<a class="anchor-link" href="#Um-Momento-de-Inflex%C3%A3o"> </a>
+</h2>
+<p>Com o canudo na mão, eu decidi não fazer mais pesquisas sobre o tema, enquanto não fosse capaz de automatizar minhas atividades de pesquisa por meio de programação. Por uma dessas providências, em um feriado, o YouTube me fez dessas sugestões que pouco têm a ver com nossas últimas pesquisas, uma <a href="https://www.youtube.com/watch?v=EBgUiuFXE3E">palestra sobre ecossistema Python para Data Science</a>. Aquilo pareceu um pouco críptico, mas ainda assim forneceu pistas de que aprendizado de Python pudesse ser um passo na direção de maior proficiência no trabalho com dados. Python ainda pareceu uma boa escolha, também por que eu já sabia que ferramentas que eu utilizava em sistemas de informação geográfica, como ArcGIS e QGIS podem ser automatizadas com Python. Assim, nesse mesmo feriado eu encontrei um <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc">tutorial</a> de 6 horas sobre a linguagem, que eu consumi avidamente,</p>
+<p>De imediato já saí programando. Entendi tudo. Certo? Errado! De maneira geral, as instruções eram bastante didáticas,o que me deu a sensação de que aprender a programar era um projeto viável. O problema era um sentimento profundo de falta de base. Tanto nesse como em outros tutoriais e cursos, por vezes aparecia uma telinha preta e alguém mandava fazer simplesmente digitar pip install. Ok, pip install. Sei digitar. Mas que raios de telinha preta é aquela. Por vezes, o tutorial pedia para fazer um clone de um repositório no GitHub, ou apontava para uma discussão no StackOverFlow. Por essas e outras, eu via que existia uma série de informações que eu ainda precisaria entender para poder utilizar Python para análise.</p>
+<p>Mesmo em meio a tantas dúvidas, entrei em uma rotina frenética de estudos. Acompanhei tutoriais, comprei cursos, baixei <a href="https://play.google.com/store/apps/details?id=org.qpython.qpy3&amp;hl=pt_BR">QPython 3L</a> para programar no celular, enquanto estava no ônibus, fiz a rota do <a href="https://play.google.com/store/apps/details?id=com.sololearn&amp;hl=pt_BR&amp;gl=US">SoloLearn</a>, também no celular. Ao fim de três meses, foi possível entender, sem grande aprofundamento, algumas coisas fundamentais: Tipos básicos de objetos, variáveis, operadores, funções, métodos, classes, estruturas de repetição, estruturas condicionais, pacotes etc.</p>
+<p>Após três meses vendo e revendo aspectos básicos de Python , eu passei a me dedicar a aprender Pandas, Matplotlib e Jupyter Notebooks. Assim, no quarto mês do meus estudos, consegui fazer meu primeiro <em>script</em> no trabalho. Automatizei uma série de análises populacionais que constantemente eu tinha que elaborar para consultorias em planejamento urbano e regional. Em cada contrato, as análises eram sempre muito semelhantes, contando com os mesmos gráficos e mapas. Com isso, fiz um notebook que, a partir de um código de município fornecido pelo operador, elabora uma série de tabelas e gráficos a serem utilizados em relatórios para planos diretores.</p>
+<h2 id="Colhendo-Frutos">
+<a class="anchor" href="#Colhendo-Frutos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Colhendo Frutos<a class="anchor-link" href="#Colhendo-Frutos"> </a>
+</h2>
+<p>De lá para cá, foram milhares de horas dedicadas tanto ao aprendizado como à aplicação da linguagem Python aos meus trabalhos. Posso reconhecer que minha capacidade analítica foi incrivelmente afetada. Para a produção dos meus relatórios técnicos, o fluxo de trabalho de obtenção, tratamento, análise de dados e divulgação de informações se tornou muito mais dinâmico. Agora estou trabalhando em criar webapps interativos, em que o usuário possa manipular dados que acompanharão artigos acadêmicos que pretendo publicar. O primeiro exercício desse tipo ocorreu em um <a href="http://www.seer.ufu.br/index.php/hygeia/article/view/55064">texto sobre a difusão territorial da Covid19</a> para a <strong>Revista Brasileira de Geografia da Saúde</strong>. Além de tudo, já estou começando a ter demandas de aplicação de ferramentas de Machine Learning no trabalho.</p>
+<p>O caráter prático dos estudos têm trazido um efeito bastante positivo no trabalho, uma vez que a aplicação é a tônica. Aprender a programar é, sobretudo, criar algo. Para pessoas que, como eu, sentem prazer em estudar, por vezes o estudo pode ser algo satisfatório em si mesmo. Lê-se pelo prazer da leitura. Não lembro quantas vezes parei para estudar áreas que não terão aplicação profissional prática para mim, só pelo prazer de saber essas coisas interessantes - astronomia, por exemplo. Na programação, no entanto, eu preciso produzir um programa. É esse o foco. Isso tem me ajudado a ter uma maior proclividade para produzir. Afinal, é preciso se reconhecer que, parte significativa do prestígio e dos retornos financeiros decorrem muito mais daquilo que produzimos, do que daquila conhecimento que armazenamos.</p>
+<p>O mais importante, aquele sentimento de pior analista do mundo foi embora.</p>
+<p></p>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">Nos próximos posts dessa série, pretendo dar dicas de estudo para aqueles que se interessarem em aumentar sua capacidade analítica a partir de programação em Python</span>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="augustogeog/augustogeog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/augustogeog/para%20ajudar%20o%20povo%20de%20humanas%20a%20contar%20mi%C3%A7angas%20com%20python/2021/05/03/pq_aprendi_python.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/augustogeog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/augustogeog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/augustogeog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Personal Blog about Data Science Tools applied to Urban and Regional Planning, Geography and Social Sciences in General.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/augustogeog" title="augustogeog"><svg class="svg-icon grey"><use xlink:href="/augustogeog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/augustogeog" title="augustogeog"><svg class="svg-icon grey"><use xlink:href="/augustogeog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
