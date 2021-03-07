@@ -159,11 +159,11 @@ window.onload = wrap_img;
 <p>Os exemplos abaixo são de código que dão sustentação a algumas análises sobre a difusão territorial da Covid-19 enntre municípios brasileiros. Os resultados foram aceitos pela Hygeia - Revista Brasileira de Geografia da Saúde - e estarão disponíveis on-line em breve.</p>
 <p><strong>Figura 1: Renderização de figura cartográfica, tabela e gráfico a partir de código Python em Jupyter Notebook</strong> -</p>
 <hr>
-<p>!(./images/figura_renderizada_nb.png "Cartograma Renderizado em Jupyter Notebook")</p>
+<p><img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/figura_renderizada_nb.png" alt="" title="Cartograma Renderizado em Jupyter Notebook"></p>
 <hr>
-<p>!(./images/tabela_renderizada_nb.png "Tabela Renderizada em Jupyter Notebook")</p>
+<p><img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/tabela_renderizada_nb.png" alt="" title="Tabela Renderizada em Jupyter Notebook"></p>
 <hr>
-<p>!(./images/grafico_renderizado_nb.png "Gráfico Renderizado em Jupyter Notebook")</p>
+<p><img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/grafico_renderizado_nb.png" alt="" title="Gráfico Renderizado em Jupyter Notebook"></p>
 <hr>
 <p>Da mesma forma, em trabalhos técnicos, notebooks podem ser utilizados como verdadeiras notas técnicas interativas. A publicação de livros também tem sido um campo de aplicação desses ambientes de programação. Existem casos de livros que foram feitos inteiramente em notebooks, com divulgação interativa associada aos volumes físicos, como é o caso do livro <a href="https://mybinder.org/v2/gh/fastai/fastbook/master">Deep Learning for Coders with fastai and PyTorch</a>.</p>
 <p>Ainda quanto a sua aplicação, avanços têm sido feitos na utilização de notebooks como plataformas de distribuição final - <em>deployment</em> - de aplicativos e serviços <em>web</em>, como, por exemplo, na forma de painéis temáticos de visualização de dados - <em>dashboards</em>. No entanto, ainda existem grandes limitações para seu uso em diversas dessas finalidades. Assim, na maior parte dos casos, o notebook é utilizado como uma ferramenta dinâmica, para obtenção, tratamento e análise de dados, que deixa de ser considerada na fase de deployment, em que ferramentas mais tradicionais de programação são utilizadas, tais como editores de textos e as IDEs - Integrated Development Environment, associadas a servidores <em>on-line</em>, serviços de distribuição e a contêineres em nuvem.</p>
@@ -175,13 +175,13 @@ window.onload = wrap_img;
 <p>o Jupyter apresenta, no nosso navegador de internet, uma interface (jupyter dashboard) para os diretórios do computador , a partir da qual podemos, entre outras coisas, criar, acessar, renomear e deletar notebooks, que são salvos com a extensão .ipynb. Trata-se da interface exposta adiante:</p>
 <p><strong>Figura 2: Jupyter Dashboard - Interface de navegação entre arquivos .ipynb</strong></p>
 <hr>
-<p>!(./images/jupyter_dashboard.png "Jupyter DashBoard")</p>
+<p><img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/jupyter_dashboard.png" alt="" title="Jupyter DashBoard"></p>
 <hr>
 <p>Ao abrirmos um jupyter notebook, temos acesso à interface do Jupyter Editor, por meio da qual podemo redigir texto e código nas células do documento. De cima para baixo, conforme a imagem abaixo, temos uma barra de cabeçalho -<em>header</em>-, a barra de menu -menubar-, com diversas seções (File, Edit, View etc.), e barra de ferramentas -<em>toolbar</em>-, com botões para acesso rápido às principais funcionalidades, entre elas salvar, adicionar novas células, recortar, colar, executar - <em>run</em> -, interromper etc.<br>
 <br>
 <strong>Figura 3: Jupyter Editor - Interface de edição e execução de Notebooks</strong></p>
 <hr>
-<p>!(./images/jupyter_interface_edicao.png "Interface de Edição Jupyter Notebook")</p>
+<p><img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/jupyter_interface_edicao.png" alt="" title="Interface de Edição Jupyter Notebook"></p>
 <hr>
 <p>Após essa porção superior, com as barras, encontramos a área do documento interativo em si, composta por células de tipo código e Markdown. Podemos inserir novas células, seja por meio dos controles na barra de ferramentas, seja a partir de atalhos (o que é amplamente utilizado). É possível se navegar entre células e dentro de cada célula. Isso ocorre, pois o editor apresenta dois estados básicos: o <strong>modo de navegação</strong> e o <strong>modo de edição de célula</strong>.</p>
 <p>No <strong>modo de navegação</strong>, ao pressionarmos os botões <em>up</em> e <em>down</em> do nosso teclado - setas para cima e para baixo -, movemos uma caixa de selação entre as células. Sabemos que estamos em modo de navegação quando a lateral esquerda da caixa de seleção se encontra com uma margem azul (veja a Figura 2). Caso estejamos dentro de uma célula, no modo edição, podemos pressionar <em>Esc</em> no teclado para voltar para o modo de navegação.</p>
@@ -393,6 +393,7 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A linguagem Python é um campo muito amplo para nosso conhecimento. Por essa razão, para explorarmos esse vasto mundo, precisamos agrupar esses assuntos em poucas categorias, que nos auxiliem a identificar cada uma das ferramentas integrantes. Por essa razão, dividimos o aprendizado neste curso em Dados, Ações, Circunstâncias, Revisão, Customização e Expansão, conforme mostra a Figura 2.</p>
 <p><strong>Figura 5: Chaves de Interpretação das Ferramentas em Python</strong></p>
+<p><img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/overview.png" alt="" title="Python Overview"></p>
 
 </div>
 </div>
@@ -460,39 +461,6 @@ São...</p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">'https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/figura_renderizada_nb.png'</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<img src="https://raw.githubusercontent.com/augustogeog/augustogeog/master/images/figura_renderizada_nb.png">
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 </div>
 
 
