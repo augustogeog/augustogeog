@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Aula 1 | AugustoGeog Data Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Aula 1" />
+<meta name="author" content="Augusto dos Santos Pereira" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Uma abordagem didática para iniciantes" />
+<meta property="og:description" content="Uma abordagem didática para iniciantes" />
+<link rel="canonical" href="https://augustogeog.github.io/augustogeog/python%20para%20iniciantes/2021/03/07/teste.html" />
+<meta property="og:url" content="https://augustogeog.github.io/augustogeog/python%20para%20iniciantes/2021/03/07/teste.html" />
+<meta property="og:site_name" content="AugustoGeog Data Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-07T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://augustogeog.github.io/augustogeog/python%20para%20iniciantes/2021/03/07/teste.html","@type":"BlogPosting","headline":"Aula 1","dateModified":"2021-03-07T00:00:00-06:00","datePublished":"2021-03-07T00:00:00-06:00","author":{"@type":"Person","name":"Augusto dos Santos Pereira"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/python%20para%20iniciantes/2021/03/07/teste.html"},"description":"Uma abordagem didática para iniciantes","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/augustogeog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://augustogeog.github.io/augustogeog/feed.xml" title="AugustoGeog Data Blog" /><link rel="shortcut icon" type="image/x-icon" href="/augustogeog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/augustogeog/">AugustoGeog Data Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/augustogeog/about/">About Me</a><a class="page-link" href="/augustogeog/search/">Search</a><a class="page-link" href="/augustogeog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Aula 1 </h1><p class="page-description">Uma abordagem didática para iniciantes</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-07T00:00:00-06:00" itemprop="datePublished">
+        Mar 7, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Augusto dos Santos Pereira</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Python Para Iniciantes">Python Para Iniciantes</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/augustogeog/augustogeog/tree/master/_notebooks/2021-03-07-teste.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/augustogeog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/augustogeog/augustogeog/master?filepath=_notebooks%2F2021-03-07-teste.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/augustogeog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/augustogeog/augustogeog/blob/master/_notebooks/2021-03-07-teste.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/augustogeog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Para-início-de-conversa">Para início de conversa </a></li>
+<li class="toc-entry toc-h2"><a href="#Conhecendo-o-Jupyter-Notebook">Conhecendo o Jupyter Notebook </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-03-07-teste.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Para-início-de-conversa">
+<a class="anchor" href="#Para-in%C3%ADcio-de-conversa" aria-hidden="true"><span class="octicon octicon-link"></span></a>Para início de conversa<a class="anchor-link" href="#Para-in%C3%ADcio-de-conversa"> </a>
+</h2>
+<p>Bem-vindo ao nosso curso Python para iniciantes!</p>
+<p>Este curso é um esforço para a auxiliar aquelas pessoas que, como eu há algum tempo atrás, não têm qualquer familiaridade com linguagem de programação, mas gostariam de utilizar <a href="https://www.python.org/">Python</a> como ponto de partida em uma trajetória de capacitação para melhor desempenho profissional. Dessa forma, a estrutura, os exemplos, os exercícios e o ritmo deste curso foram cuidadosamente pensados para servir como ponto de partida no aprendizado da programação. Assim, espera-se que, ao final, os participantes do curso possam ter uma visão geral dessa linguagem de programação e uma base sólida para avançar futuramente sobre temas mais complexos.</p>
+<p>O curso conta com alguns vídeos, aulas ao vivo, on-line, que são ofertadas frequentemente, e com o presente conjunto de documentos interativos, chamados Jupyter Notebooks.</p>
+<p>Mas afinal, porque iniciar uma trajetória de aprendizado na linguagem Python? Aqui vão algumas considerações que podem nos ajudar a responder a esssa questão. Python:</p>
+<ul>
+<li>é uma linguagem multi-propósito, o que permite fazer análise de dados, jogos, aplicativos, websites e tantos outros seviços;</li>
+<li>é considerada uma boa linguagem de programação para iniciantes, dada sua sintaxe simples;</li>
+<li>é uma das linguagens de programação mais utilizadas na atualidade, de acordo com o repositório de codigos <a href="https://madnight.github.io/githut/#/pull_requests/2020/2">Github</a>;</li>
+<li>é, na atualidade, a base do ecossistema mais robusto para Ciência de Dados e Machine Learning;</li>
+<li>apresenta uma imensa quantidade bibliotecas de terceiros, com diversas finalidades, que facilitam o desenvolvimento;</li>
+<li>conta com uma comunidade de desenvolvimento bastante ativa, sempre disposta a compartilhar informações e conhecimento.</li>
+</ul>
+<p>Para tirarmos o maior proveito deste curso, precisamos nos familiarizar com este ambiente interativo em que a parte textual e prática de nosso curso está ocorrendo, o que faremos na seção seguinte.</p>
+<h2 id="Conhecendo-o-Jupyter-Notebook">
+<a class="anchor" href="#Conhecendo-o-Jupyter-Notebook" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conhecendo o Jupyter Notebook<a class="anchor-link" href="#Conhecendo-o-Jupyter-Notebook"> </a>
+</h2>
+<p>Este ambiente aqui, em que se encontra a parte escrita de nosso curso, é um <strong>Jupyter Notebook</strong>. Notebooks são excelentes mecanismos para se trabalhar com dados a partir de programação, pois eles agregam células de textos formatáveis e células de código, em que são executados nossos programas de maneira interativa. Por essa interatividade, podemos visualizar diversos tipos de resultados de códigos, inclusive com renderização de tabelas, gráficos, mapas, grafos, fórmulas matemáticas etc.</p>
+<p>Por essa razão, notebooks têm sido utilizados amplamente no fluxo de trabalho de Ciência de Dados, desde a obtenção e o tratamento dos dados, passando para a análise exploratória, até a modelagem e divulgação de resultados. A respeito da divulgação de análises, diversos artigos científicos de peso já têm sido submetidos a partir de notebooks como este. Isso garante que avaliadores, a comunidade científica em geral e quaisquer interessados possam não só ler os resultados e observar os produtos gráficos de apoio, mas também verificar o funcionamento do código que dá base para a publicação, o que permite avaliá-lo, validá-lo e reproduzi-lo em novos trabalhos.</p>
+<p>Os exemplos abaixo são de código que dão sustentação a algumas análises sobre a difusão territorial da Covid-19 enntre municípios brasileiros. Os resultados foram aceitos pela Hygeia - Revista Brasileira de Geografia da Saúde - e estarão disponíveis on-line em breve.</p>
+<p><strong>Figura 1: Renderização de figura cartográfica, tabela e gráfico a partir de código Python em Jupyter Notebook</strong> -</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/augustogeog/images/copied_from_nb/images/figura_renderizada_nb.png" alt="" title="Cartograma Renderizado em Jupyter Notebook"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<hr>
+<hr>
+<p>Da mesma forma, em trabalhos técnicos, notebooks podem ser utilizados como verdadeiras notas técnicas interativas. A publicação de livros também tem sido um campo de aplicação desses ambientes de programação. Existem casos de livros que foram feitos inteiramente em notebooks, com divulgação interativa associada aos volumes físicos, como é o caso do livro <a href="https://mybinder.org/v2/gh/fastai/fastbook/master">Deep Learning for Coders with fastai and PyTorch</a>.</p>
+<p>Ainda quanto a sua aplicação, avanços têm sido feitos na utilização de notebooks como plataformas de distribuição final - <em>deployment</em> - de aplicativos e serviços <em>web</em>, como, por exemplo, na forma de painéis temáticos de visualização de dados - <em>dashboards</em>. No entanto, ainda existem grandes limitações para seu uso em diversas dessas finalidades. Assim, na maior parte dos casos, o notebook é utilizado como uma ferramenta dinâmica, para obtenção, tratamento e análise de dados, que deixa de ser considerada na fase de deployment, em que ferramentas mais tradicionais de programação são utilizadas, tais como editores de textos e as IDEs - Integrated Development Environment, associadas a servidores <em>on-line</em>, serviços de distribuição e a contêineres em nuvem.</p>
+<p>Se muitos dos termos acima forem novos. Não precisamos nos preocupar. O importante a se reter aqui é que notebooks são poderosas ferramentas durante o fluxo de análise de dados com Python. Porém existem limitações e, a depender de nosso projeto de aprendizado e de aplicação dos conhecimentos de programação, novas ferramentas de construção de código precisarão ser consideradas no futuro.</p>
+<p>Por sua aplicação em operações com dados, diversos serviços em nuvem oferecem a possibilidade de programação por meio de Jupyter Notebooks, entre elas Microsoft Azure, Google Cloud e Amazon AWS. Da mesma forma, mesmo IDEs têm recebido interface com notebooks para permitir que desenvolvedores utilizem suas potencialidades.</p>
+<p>A princípio, o projeto Ipython oferecia ambiente de programação interativo voltado para Python. A partir de 2014, o projeto contava com suporte para as linguagens Julia, Python e R, o que gerou o acrônimo Jupyter. Desde então, o projeto ganhou o nome de Jupyter Notebooks, passando Ipython a se referir Ipython a se referir ao servidor de <em>kernels</em> (unidades computacionais) por traz da interface de programação. Nos anos seguintes, novas funcionalidades e suporte às mais diversas linguagens de programação foram adicionadas, fazendo com que crescesse imensamente o seu uso. Em 2018, foi lançado o Jupyter Lab, que amplia significativamente as ferramentas disponíveis para desenvolvimento por notebooks, o que leva alguns a o chamarem de "Jupyter Notebooks com esteroides)".</p>
+<p>Ao abrirmos um jupyter notebook, temos acesso à interface do Jupyter Editor, por meio da qual podemo redigir texto e código nas células do documento. De cima para baixo, conforme a imagem abaixo, temos uma barra de cabeçalho -<em>header</em>-, a barra de menu -menubar-, com diversas seções (File, Edit, View etc.), e barra de ferramentas -<em>toolbar</em>-, com botões para acesso rápido às principais funcionalidades, entre elas salvar, adicionar novas células, recortar, colar, executar - <em>run</em> -, interromper etc.<br>
+<br></p>
+<p>o Jupyter apresenta, no nosso navegador de internet, uma interface (jupyter dashboard) para os diretórios do computador , a partir da qual podemos, entre outras coisas, criar, acessar, renomear e deletar notebooks, que são salvos com a extensão .ipynb. Trata-se da interface exposta adiante:</p>
+<p><strong>Figura 2: Jupyter Dashboard - Interface de navegação entre arquivos .ipynb</strong></p>
+<hr>
+<hr>
+<p>Ao abrirmos um jupyter notebook, temos acesso à interface do Jupyter Editor, por meio da qual podemo redigir texto e código nas células do documento. De cima para baixo, conforme a imagem abaixo, temos uma barra de cabeçalho -<em>header</em>-, a barra de menu -menubar-, com diversas seções (File, Edit, View etc.), e barra de ferramentas -<em>toolbar</em>-, com botões para acesso rápido às principais funcionalidades, entre elas salvar, adicionar novas células, recortar, colar, executar - <em>run</em> -, interromper etc.<br>
+<br>
+<strong>Figura 3: Jupyter Editor - Interface de edição e execução de Notebooks</strong></p>
+<hr>
+<hr>
+<p>Após essa porção superior, com as barras, encontramos a área do documento interativo em si, composta por células de tipo código e Markdown. Podemos inserir novas células, seja por meio dos controles na barra de ferramentas, seja a partir de atalhos (o que é amplamente utilizado). É possível se navegar entre células e dentro de cada célula. Isso ocorre, pois o editor apresenta dois estados básicos: o <strong>modo de navegação</strong> e o <strong>modo de edição de célula</strong>.</p>
+<p>No <strong>modo de navegação</strong>, ao pressionarmos os botões <em>up</em> e <em>down</em> do nosso teclado - setas para cima e para baixo -, movemos uma caixa de selação entre as células. Sabemos que estamos em modo de navegação quando a lateral esquerda da caixa de seleção se encontra com uma margem azul (veja a Figura 2). Caso estejamos dentro de uma célula, no modo edição, podemos pressionar <em>Esc</em> no teclado para voltar para o modo de navegação.</p>
+<p>No modo de navegação, simplesmente pressionar certas teclas no teclado já significa utilizá-las como atalho para algumas funcionalidades. Podemos inserir célula de código acima (A), abaixo (B), mudar a célula para tipo Markdown(M), ou para tipo código (Y), além de visualizar todas as teclas de atalho (H), entre tantas outras funcionalidades.</p>
+<p>Ao pressionar Shift+Enter ou Ctrl+Enter executamos a célula atualmente selecionada, o que renderiza a edição de texto, caso estejamos em uma célula Markdown, ou executa o código, caso se trate de uma célula de código. A diferença entre ambos os comandos é o primeiro avança para a próxima célula, ou cria uma nova, enquanto o segundo mantém a seleção sobre a célula recém-executada.</p>
+<p>Quando estamos em modo de navegação, ao pressionar Enter sobre uma célula, acessamos o seu conteúdo, entrando para o <strong>modo de edição</strong>. Nesse modo, simplesmente pressionar as letras, números e caracteres especiais do teclado não corresponde a acionar qualquer atalho, mas inserir na célula os caracteres correspondentes. O modo de edição é identificável por uma margem verde no lado esquerdo da célula selecionada.</p>
+<p>Agora podemos avançar para entendermos como utilizar as células de tipo Markdown. Markdown é uma linguagem de marcação bastante simples e de fácil utilização, por meio da qual podemos criar textos formatados. A próxima célula, não renderizada, mostra alguns exemplos de formatação texto, enquanto a célula seguinte mostra esses exemplos já renderizados.
+<br>
+<br></p>
+<p><strong>Célula de Exemplo 1: notações de formatação em Markdown não renderizadas</strong></p>
+<hr>
+<p><strong>trecho em negrito</strong>.</p>
+<p><em>trecho em itálico</em></p>
+<p><del>riscado</del></p>
+<ul>
+<li>marcador<ul>
+<li>marcador subordinado</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Primeiro item de uma lista ordenada</li>
+<li>Segundo item de uma lista ordenada <ol>
+<li>Subitem de uma lista ordenada</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"destaque de código"</span>
+<span class="nb">print</span> <span class="n">s</span>
+</pre></div>
+<p><a href="https://www.google.com">Exemplo de link para o <em>Google website</em></a></p>
+<hr>
+<p><strong>Célula de Exemplo 2: notações de formatação em Markdown renderizadas</strong></p>
+<hr>
+<p><strong>trecho em negrito</strong>.</p>
+<p><em>trecho em itálico</em></p>
+<p><del>riscado</del></p>
+<ul>
+<li>marcador<ul>
+<li>marcador subordinado</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Primeiro item de uma lista ordenada</li>
+<li>Segundo item de uma lista ordenada<ol>
+<li>Subitem de uma lista ordenada</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"destaque de código"</span>
+<span class="nb">print</span> <span class="n">s</span>
+</pre></div>
+<p><a href="https://www.google.com">Exemplo de link para o <em>Google website</em></a></p>
+<hr>
+<p>Em células Markdown, um título é destacado ao colocarmos o símbolo # no início de uma frase. Títulos de nível 1 começam com um sustenido, enquanto aqueles de nível dois começam com dois, e assim sucessivamente. Não é adequado colocarmos um exemplo aqui, pois isso interferiria na estrutura de títulos deste próprio notebook. Para verificar como cada título é feito, basta adentrar em qualquer célula de título deste notebook com Enter.</p>
+<p>Por padrão, operações computacionais não são calculadas em células de tipo markdown. Assim, de maneira geral, 1+1, em uma célula de texto não retorna o resultado 2. O mesmo é verdade para qualquer outro tipo de operação com Python. Caso seja útil para algum projeto, é possível inserir trechos executáveis em células markdown, o que pode gerar textos atualizáveis automaticamente. Isso é feito por meio de extensões, Nbextensions.</p>
+<p>Existem diversas fontes <em>on-line</em> de informações sobre notações para formatação de texto em Markdown. Na <a href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html">documentação do Jupyter Notebook</a> é possível ver alguns exemplos. Caso necessitemos de auxílio em Português, uma breve busca na internet trará dezenas de tutoriais, guias e exemplos úteis.</p>
+<p>Quando passamos às células de código, por sua vez, os caracteres inseridos passam a ser <em>inputs</em> com significado particular para a linguagem de programação em uso, de tal forma que, ao serem executadas, uma unidade de processamento interativa (<em>kernel</em>) é acionada, retornando o resultado de uma operação computacional. As células de código apresentam duas partes básicas, <strong><em>In</em></strong>, em que inserimos o código, e <strong><em>Out</em></strong>, em que obtemos resultados, quando a operação descrita no código assim o requerer. Operações de armazenamento de variáveis, por exemplo, não geram representação em Out.</p>
+<p>À esquerda das células de código, chaves são dispostas e seu conteúdo nos indica o status de execução. Assim, temos células que não foram executadas - nenhuma informação entre as chaves -, que estão em execução - asterisco entre as chaves - e já executadas - número de ordem da execução. Na figura abaixo podemos observar uma célula já executada (observe a numeração em In) e acionada em modo edição (margem verde à esquerda).</p>
+<p><strong>Figura 4: Célula de Código - Interface de edição e execução de Notebooks</strong></p>
+<p>Este blog, na realidade, é feito em Jupyter Notebook. O código abaixo é feito em células como essas acima e uma solução on-line chamada FastPages renderiza os exemplos de código abaixo, com seus resultados.</p>
+<hr>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="augustogeog/augustogeog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/augustogeog/python%20para%20iniciantes/2021/03/07/teste.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/augustogeog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/augustogeog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/augustogeog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Personal Blog about Data Science Tools applied to Urban and Regional Planning, Geography and Social Sciences in General.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/augustogeog" title="augustogeog"><svg class="svg-icon grey"><use xlink:href="/augustogeog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/augustogeog" title="augustogeog"><svg class="svg-icon grey"><use xlink:href="/augustogeog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
