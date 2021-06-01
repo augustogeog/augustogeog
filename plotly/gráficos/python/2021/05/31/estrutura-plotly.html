@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Plotly: Estrutura da Biblioteca | AugustoGeog Data Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Plotly: Estrutura da Biblioteca" />
+<meta name="author" content="Augusto dos Santos Pereira" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Uma visão geral sobre a estrutura de uma das bibliotecas analíticas mais poderosas no ecossistema Python!" />
+<meta property="og:description" content="Uma visão geral sobre a estrutura de uma das bibliotecas analíticas mais poderosas no ecossistema Python!" />
+<link rel="canonical" href="https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/05/31/estrutura-plotly.html" />
+<meta property="og:url" content="https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/05/31/estrutura-plotly.html" />
+<meta property="og:site_name" content="AugustoGeog Data Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-31T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/05/31/estrutura-plotly.html","@type":"BlogPosting","headline":"Plotly: Estrutura da Biblioteca","dateModified":"2021-05-31T00:00:00-05:00","datePublished":"2021-05-31T00:00:00-05:00","author":{"@type":"Person","name":"Augusto dos Santos Pereira"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/05/31/estrutura-plotly.html"},"description":"Uma visão geral sobre a estrutura de uma das bibliotecas analíticas mais poderosas no ecossistema Python!","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/augustogeog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://augustogeog.github.io/augustogeog/feed.xml" title="AugustoGeog Data Blog" /><link rel="shortcut icon" type="image/x-icon" href="/augustogeog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/augustogeog/">AugustoGeog Data Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/augustogeog/about/">About Me</a><a class="page-link" href="/augustogeog/search/">Search</a><a class="page-link" href="/augustogeog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Plotly: Estrutura da Biblioteca</h1><p class="page-description">Uma visão geral sobre a estrutura de uma das bibliotecas analíticas mais poderosas no ecossistema Python!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-31T00:00:00-05:00" itemprop="datePublished">
+        May 31, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Augusto dos Santos Pereira</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Plotly">Plotly</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Gráficos">Gráficos</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/augustogeog/categories/#Python">Python</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#O-Domínio-da-Ferramenta">O Domínio da Ferramenta </a></li>
+<li class="toc-entry toc-h2"><a href="#Plotly-Data">Plotly Data </a></li>
+<li class="toc-entry toc-h2"><a href="#Plotly-Express">Plotly Express </a></li>
+</ul><body>
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-05-31-estrutura-plotly.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="O-Domínio-da-Ferramenta">
+<a class="anchor" href="#O-Dom%C3%ADnio-da-Ferramenta" aria-hidden="true"><span class="octicon octicon-link"></span></a>O Domínio da Ferramenta<a class="anchor-link" href="#O-Dom%C3%ADnio-da-Ferramenta"> </a>
+</h2>
+<p>O ecossistema Python de Ciência de Dados apresenta ferramentas diversas para obtenção, tratamento, análise, modelagem de dados, e deployment de resultados. Em uma ambiente tão diversificado de ferramentas, é impossível que tenhamos profundo conhecimento sobre cada uma das ferramentas que utilizamos no nosso fluxo de trabalho. Quanto mais no caso daquelas de que precisamos para acessar uma única função. Assim, precisamos ter um projeto de conhecimento sobre as ferramentas, classificando-as segundo o nível de relevância no nosso trabalho quotidiano. Nesse caso, aquelas menos importantes podem ter aprendidas com o jogo em andamento. Na hora que precisarmos delas, vamos ler a documentação ou ver um vídeo no YouTube. Quanto a outras ferramentas, mais rotineiras, precisamos ter uma noção geral de como funcionam e suas principais funcionalidades. Um terceiro grupo de ferramentas é formado por aquelas que serão a ponta de lança das nossas atividades. Nesses casos, nós vamos saber muito. Vamos conhecer a documentação com muita profundidade, entender os usos para os diversos subpacotes, as principais ferramentas, a lógica dos algoritmos utilizados, processos de otimização etc.</p>
+<p>Assim, este texto é destinado àqueles que querem aprender mais a fundo a utilizar a biblioteca Plotly para geração de produtos analíticos - gráficos, mapas e diagramas. Aqui vamos tentar avançar sobre a estrutura da biblioteca, para entendermos o que podemos fazer com cada um de seus subpacotes.</p>
+<p>Adiante, vamos então falar dos sete subpacotes Plotly: <strong>plotly.data</strong>, <strong>Plotly Express</strong>, <strong>plotly.colors</strong>, <strong>Graph Objects</strong>, <strong>Subplots</strong>, <strong>I/O</strong>, e <strong>Figure Factories</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plotly-Data">
+<a class="anchor" href="#Plotly-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plotly Data<a class="anchor-link" href="#Plotly-Data"> </a>
+</h2>
+<p><a href="https://plotly.com/python-api-reference/generated/plotly.data.html#module-plotly.data">Plotly Data</a> é uma biblioteca em que podemos encontrar <em><strong>datasets</strong></em> para exercícios e práticas de elaboração de gráficos. Esses datasets conformam uma ótima maneira de se adquirir rápida prática na produção dos gráficos. Cada dataset tem uma função que o carrega em formato Panda DataFrame, conforme podemos ver adiante para as eleições para prefeito de Montreal em 2013, segundo os distritos eleitorais.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">plotly.data</span> <span class="kn">import</span> <span class="n">election</span><span class="p">,</span> <span class="n">medals_long</span><span class="p">,</span> <span class="n">stocks</span> <span class="c1"># importando a função de carregamento de alguns datasets</span>
+<span class="n">df_election</span> <span class="o">=</span> <span class="n">election</span><span class="p">()</span> <span class="c1"># declarando o dataset como Pandas Data Frame e atribuindo à variável df</span>
+<span class="n">df_medals</span> <span class="o">=</span> <span class="n">medals_long</span><span class="p">()</span>
+<span class="n">df_stocks</span> <span class="o">=</span> <span class="n">stocks</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_election</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># verificando as cinco primeiras linhas do Data Frame Election</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>district</th>
+      <th>Coderre</th>
+      <th>Bergeron</th>
+      <th>Joly</th>
+      <th>total</th>
+      <th>winner</th>
+      <th>result</th>
+      <th>district_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101-Bois-de-Liesse</td>
+      <td>2481</td>
+      <td>1829</td>
+      <td>3024</td>
+      <td>7334</td>
+      <td>Joly</td>
+      <td>plurality</td>
+      <td>101</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102-Cap-Saint-Jacques</td>
+      <td>2525</td>
+      <td>1163</td>
+      <td>2675</td>
+      <td>6363</td>
+      <td>Joly</td>
+      <td>plurality</td>
+      <td>102</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11-Sault-au-Récollet</td>
+      <td>3348</td>
+      <td>2770</td>
+      <td>2532</td>
+      <td>8650</td>
+      <td>Coderre</td>
+      <td>plurality</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>111-Mile-End</td>
+      <td>1734</td>
+      <td>4782</td>
+      <td>2514</td>
+      <td>9030</td>
+      <td>Bergeron</td>
+      <td>majority</td>
+      <td>111</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>112-DeLorimier</td>
+      <td>1770</td>
+      <td>5933</td>
+      <td>3044</td>
+      <td>10747</td>
+      <td>Bergeron</td>
+      <td>majority</td>
+      <td>112</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_medals</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># verificando as cinco primeiras linhas do Data Frame de medalhas</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nation</th>
+      <th>medal</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>South Korea</td>
+      <td>gold</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>China</td>
+      <td>gold</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Canada</td>
+      <td>gold</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>South Korea</td>
+      <td>silver</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>China</td>
+      <td>silver</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_stocks</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># verificando as cinco primeiras linhas do Data Frame de Ações</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>GOOG</th>
+      <th>AAPL</th>
+      <th>AMZN</th>
+      <th>FB</th>
+      <th>NFLX</th>
+      <th>MSFT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-01-01</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-01-08</td>
+      <td>1.018172</td>
+      <td>1.011943</td>
+      <td>1.061881</td>
+      <td>0.959968</td>
+      <td>1.053526</td>
+      <td>1.015988</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-01-15</td>
+      <td>1.032008</td>
+      <td>1.019771</td>
+      <td>1.053240</td>
+      <td>0.970243</td>
+      <td>1.049860</td>
+      <td>1.020524</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-01-22</td>
+      <td>1.066783</td>
+      <td>0.980057</td>
+      <td>1.140676</td>
+      <td>1.016858</td>
+      <td>1.307681</td>
+      <td>1.066561</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-01-29</td>
+      <td>1.008773</td>
+      <td>0.917143</td>
+      <td>1.163374</td>
+      <td>1.018357</td>
+      <td>1.273537</td>
+      <td>1.040708</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_olimpics</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nation</th>
+      <th>medal</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>South Korea</td>
+      <td>gold</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>China</td>
+      <td>gold</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Canada</td>
+      <td>gold</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>South Korea</td>
+      <td>silver</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>China</td>
+      <td>silver</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Canada</td>
+      <td>silver</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>South Korea</td>
+      <td>bronze</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>China</td>
+      <td>bronze</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Canada</td>
+      <td>bronze</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plotly-Express">
+<a class="anchor" href="#Plotly-Express" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plotly Express<a class="anchor-link" href="#Plotly-Express"> </a>
+</h2>
+<p><strong>Plotly Express</strong> é uma API de alto nível de abstração, ou seja é uma interface bastante simplificada a partir da qual se é possível fazer um quantidade riquíssima de produtos analíticos - gráficos, mapas e diagramas - com apenas uma linha de código. Isso é possível pois o pacote conta com dezenas de funções com uma grande quantidade de parâmetros e que tornam o trabalho de produção bastante intuitivo, sobretudo pois a orientação para a inserção de argumetos se encontra bem documentada e acessível no docstring e na documentação</p>
+<p></p>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">Lembrando que <strong><em>docstring</em></strong> são os textos instrutivos que aparecem relacionados a funções e construtore de objetos em Python e que são acessíveis quando aplicamos a função help a esses objetos.</span>
+</div>
+
+<p>Vejamos na prática como fazer alguns gráficos com os dados importados. Primeiramente fazemos a importação do Plotly Express como px. Em seguida, utilizando a sua função bar, indicamos df_olimpics como o data_frame a ser considerado pela função e mapeamos as colunas nation, count e medal Adiante vemos que somente com o uso da função função bar</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span> <span class="c1"># importando plotly express como px</span>
+
+<span class="n">fig_medals</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span> <span class="c1"># chamando a função bard e atribuindo o gráfico à variável fig_medals</span>
+    <span class="n">data_frame</span><span class="o">=</span><span class="n">df_olimpics</span> <span class="c1"># indicação do Data Frame Olimpics como a fonte de dados para o gráfico</span>
+    <span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'nation'</span> <span class="c1"># mapeamento da coluna nação ao eixo x</span>
+    <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'count'</span> <span class="c1"># mapeamento da coluna contagem ao eixo y</span>
+    <span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'medal'</span> <span class="c1"># mapeamento da coluna medalha às cores</span>
+    <span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">'gold'</span><span class="p">:</span><span class="s1">'rgb(238,232,170)'</span><span class="p">,</span> <span class="s1">'bronze'</span><span class="p">:</span><span class="s1">'rgb(205,133,63)'</span><span class="p">,</span> <span class="s1">'silver'</span><span class="p">:</span><span class="s1">'rgb(211,211,211)'</span><span class="p">}</span> <span class="c1">#especificação de cores</span>
+<span class="p">)</span>
+
+<span class="n">fig_medals</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># chamada da renderização da figura</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+<meta charset="utf-8">
+
+    <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>                <div id="480f6a1d-daea-48d9-bfde-759987fee7be" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("480f6a1d-daea-48d9-bfde-759987fee7be")) {                    Plotly.newPlot(                        "480f6a1d-daea-48d9-bfde-759987fee7be",                        [{"alignmentgroup": "True", "hovertemplate": "medal=gold<br>nation=%{x}<br>count=%{y}<extra></extra>", "legendgroup": "gold", "marker": {"color": "rgb(238,232,170)"}, "name": "gold", "offsetgroup": "gold", "orientation": "v", "showlegend": true, "textposition": "auto", "type": "bar", "x": ["South Korea", "China", "Canada"], "xaxis": "x", "y": [24, 10, 9], "yaxis": "y"}, {"alignmentgroup": "True", "hovertemplate": "medal=silver<br>nation=%{x}<br>count=%{y}<extra></extra>", "legendgroup": "silver", "marker": {"color": "rgb(211,211,211)"}, "name": "silver", "offsetgroup": "silver", "orientation": "v", "showlegend": true, "textposition": "auto", "type": "bar", "x": ["South Korea", "China", "Canada"], "xaxis": "x", "y": [13, 15, 12], "yaxis": "y"}, {"alignmentgroup": "True", "hovertemplate": "medal=bronze<br>nation=%{x}<br>count=%{y}<extra></extra>", "legendgroup": "bronze", "marker": {"color": "rgb(205,133,63)"}, "name": "bronze", "offsetgroup": "bronze", "orientation": "v", "showlegend": true, "textposition": "auto", "type": "bar", "x": ["South Korea", "China", "Canada"], "xaxis": "x", "y": [11, 8, 12], "yaxis": "y"}],                        {"barmode": "relative", "legend": {"title": {"text": "medal"}, "tracegroupgap": 0}, "margin": {"t": 60}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "nation"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "count"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('480f6a1d-daea-48d9-bfde-759987fee7be');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                            </script>        </div>
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+</body>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="augustogeog/augustogeog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/augustogeog/plotly/gr%C3%A1ficos/python/2021/05/31/estrutura-plotly.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/augustogeog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/augustogeog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/augustogeog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Personal Blog about Data Science Tools applied to Urban and Regional Planning, Geography and Social Sciences in General.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/augustogeog" title="augustogeog"><svg class="svg-icon grey"><use xlink:href="/augustogeog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/augustogeog" title="augustogeog"><svg class="svg-icon grey"><use xlink:href="/augustogeog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
