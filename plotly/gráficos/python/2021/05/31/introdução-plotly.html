@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -109,6 +109,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Plotly-Express">Plotly Express </a></li>
 <li class="toc-entry toc-h2"><a href="#Explorando-o-Potencial-do-Plotly-Express">Explorando o Potencial do Plotly Express </a></li>
 <li class="toc-entry toc-h2"><a href="#Palavra-de-Amigo">Palavra de Amigo </a></li>
+<li class="toc-entry toc-h2"><a href="#PS:-I-Love-You">PS: I Love You </a></li>
 </ul><body>
 <!--
 #################################################
@@ -132,8 +133,8 @@ window.onload = wrap_img;
 <h2 id="O-Desafio-do-Trabalho-com-Gráficos-em-Python">
 <a class="anchor" href="#O-Desafio-do-Trabalho-com-Gr%C3%A1ficos-em-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>O Desafio do Trabalho com Gráficos em Python<a class="anchor-link" href="#O-Desafio-do-Trabalho-com-Gr%C3%A1ficos-em-Python"> </a>
 </h2>
-<p>Elaborar gráficos, mapas e diagramas compõe uma das atividades mais rotineiras nos fluxos de trabalhos intensivos em tecnologias para dados. Ainda assim, a tarefa é frequentemente difícil, mesmo em um ecossistema de dados maduro como aquele em Python. Nas diversas bibliotecas disponíveis, a área do gráfico, o plano de fundo, os eixos, as anotações, o título, o tipo de representação, a escala numérica, a interatividade, entre tantas outras coisas, são extremamente customizáveis, o que é muito positivo do ponto de vista da versatilidade, mas o que também tem seu preço em termos de complexidade das bibliotecas. Trata-se de uma complexidade que pode ser ainda maior a depender da biblioteca utilizada, a considerar que algumas mais verborrágicas do que as outras - sim Matplotlib, estou falando com você!</p>
-<p>Por isso, descobrir como alterar atributos simples dos gráficos pode demandar um precioso tempo dos desenvolvedores/analistas. Sem falar nos possíveis erros inesperados, como incompatibilidades de ferramentas - tente fazer publicação de um gráfico cheio de subplots com Altair para <em>deployment</em> com Streamlit e você estará a caminho de noites em claro lendo posts no StackOverflow. Nesse sentido, os profissionais que trabalham com dados no ecossistema Python precisam estar bem a par dos potenciais e limitações de cada ferramenta, tendo uma visão geral de sua aplicação e até mesmo da sua compatibilidade com as demais bibliotecas que serão utilizadas no fluxo de trabalho.</p>
+<p>Elaborar gráficos, mapas e diagramas compõe uma das atividades mais rotineiras nos fluxos de trabalhos intensivos em tecnologias para dados. Ainda assim, a tarefa é frequentemente difícil, mesmo em um ecossistema de dados maduro como aquele em Python. Nas diversas bibliotecas disponíveis, a área do gráfico, o plano de fundo, os eixos, as anotações, o título, o tipo de representação, a escala numérica, a interatividade, entre tantas outras coisas, são extremamente customizáveis, o que é muito positivo do ponto de vista da versatilidade, mas o que também tem seu preço em termos de complexidade das bibliotecas. Trata-se de uma complexidade que pode ser ainda maior a depender da biblioteca utilizada, a considerar que algumas mais verborrágicas do que as outras - sim, Matplotlib, estou falando com você!</p>
+<p>Por isso, descobrir como alterar atributos simples dos gráficos pode demandar um precioso tempo dos desenvolvedores/analistas. Sem falar nos possíveis erros inesperados, como incompatibilidades de ferramentas - tente fazer publicação de um gráfico cheio de subplots com Altair para <em>deployment</em> via Streamlit e você estará a caminho de noites em claro lendo posts no StackOverflow. Nesse sentido, os profissionais que trabalham com dados no ecossistema Python precisam estar bem a par dos potenciais e limitações de cada ferramenta, tendo uma visão geral de sua aplicação e até mesmo da sua compatibilidade com as demais bibliotecas que serão utilizadas no fluxo de trabalho.</p>
 <p>Se assim é, então vamos olhar adiante o que é a biblioteca Plotly, uma ferramenta bastante robusta e poderosa em mãos bem preparadas.</p>
 <p></p>
 <div class="Toast">
@@ -153,7 +154,19 @@ window.onload = wrap_img;
 </h2>
 <p>Plotly é uma biblioteca para plotagem de gráficos, mapas e diagramas interativos e otimizados para aplicações web. Como tal, ela é ,  com versões disponíveis nas linguagens Python, JavaScript, Julia e R. A Como se trata de uma solução principalmente para web, a renderização dos gráficos é realizada em JavaScript, sendo que as versões em outras linguagens são utilizadas para gerar as instruções para aquela linguagem.</p>
 <p>É uma linguagem declarativa, ou seja, a sua lógica é a de declaração dos valores a serem plotados em relação ao tipo de representação que esperamos deles. Assim, codificamos os valores a um tipo de gráfico - barras, scatter, linhas, etc. -, destacando quais valores, como aqueles das colunas de um <em> data frame</em>, a variações no eixo x, enquanto associamos outros a variações no eixo y, a cores, tamanhos, formas, e assim sucessivamente.</p>
-<p>Os pontos fortes da biblioteca são a beleza e elegância dos layouts, a ampla gama tipos de gráficos, mapas e diagramas, os recursos de interatividade, a compatibilidade com diversos recursos para deployment (possibilidade de embedment em webapps produzidos por diferentes ferramentas), a integração as demais ferramentas do ecossistema de dados em Python (a biblioteca trabalha perfeitamente com Pandas), a infinidade de customizações possíveis nos mais diversos atributos, a ativa comunidade disposta a responder questões on-line, a documentação consistente e bem estruturada, a rápida curva de aprendizado para produção dos primeiros gráficos. Como ponto negativo, encontramos a complexidade para entendimento do funcionamento dos recursos de mais baixo nível de abstração, necessários quando se pretende fazer customizações em detalhes dos produtos gráficos.</p>
+<p>Os pontos fortes da biblioteca são:</p>
+<ol>
+<li>a beleza e elegância dos layouts</li>
+<li>a ampla gama tipos de gráficos, mapas e diagramas</li>
+<li>os recursos de interatividade</li>
+<li>a compatibilidade com diversos recursos para deployment na web, inclusive com recursos próprios via biblioteca Dash</li>
+<li>a integração as demais ferramentas do ecossistema de dados em Python</li>
+<li>a infinidade de customizações possíveis nos mais diversos atributos</li>
+<li>a ativa comunidade disposta a responder questões on-line</li>
+<li>a documentação consistente e bem estruturada</li>
+<li>a rápida curva de aprendizado para produção dos primeiros gráficos</li>
+</ol>
+<p>Como ponto negativo, encontramos a complexidade para entendimento do funcionamento dos recursos de mais baixo nível de abstração, necessários quando se pretende fazer customizações em detalhes dos produtos gráficos.</p>
 
 </div>
 </div>
@@ -164,7 +177,7 @@ window.onload = wrap_img;
 <h2 id="Plotly-Express">
 <a class="anchor" href="#Plotly-Express" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plotly Express<a class="anchor-link" href="#Plotly-Express"> </a>
 </h2>
-<p>Por falar em pontos positivos, a rápida implementação de gráficos bastante arrojados é garantida por uma API de alto nível de abstração chamada Plotly Express. Para não ficar nas minhas palavras, veja só adiante:</p>
+<p>Por falar em pontos positivos, a rápida implementação de gráficos bastante arrojados é garantida por uma API de alto nível de abstração chamada Plotly Express. Para não ficar nas minhas palavras, vejamos adiante:</p>
 
 </div>
 </div>
@@ -178,11 +191,10 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># importando Pandas para manipular dados tabulares</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span> <span class="c1"># importando plotly express. A prática é dar alias px</span>
-
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../assets/data/pop_long.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
-
-<span class="n">df</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">'https://raw.githubusercontent.com/augustogeog/augustogeog/master/assets/data/pop_long.csv'</span>
+    <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span> <span class="c1"># carregando dados populacionais de São José dos Pinhais/PR em Pandas Data Frame</span>
+<span class="n">df</span> <span class="c1"># chamando o Data Frame</span>
 </pre></div>
 
     </div>
@@ -355,6 +367,14 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Acima, importamos para Pandas DataFrame os dados populacionais conforme os levantamentos censitários de 1970 a 2010 para São José dos Pinhais. Com esses dados atribuídos à variável df, podemos passar à produção de um gráfico de linhas que mostre a variação demográfica urbana, rural e total no período:</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -363,9 +383,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data_frame</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'Ano'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'População'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'Situação'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Crescimento Populacional em São José dos Pinhais/PR'</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1">#from IPython.display import HTML</span>
-<span class="c1">#HTML(fig.to_html())</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">#Método show para renderização do gráfico</span>
 </pre></div>
 
     </div>
@@ -383,9 +401,9 @@ window.onload = wrap_img;
 <meta charset="utf-8">
 
     <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>                <div id="08369fa8-3467-4536-8511-954a69581bb1" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("08369fa8-3467-4536-8511-954a69581bb1")) {                    Plotly.newPlot(                        "08369fa8-3467-4536-8511-954a69581bb1",                        [{"hovertemplate": "Situa\u00e7\u00e3o=Total<br>Ano=%{x}<br>Popula\u00e7\u00e3o=%{y}<extra></extra>", "legendgroup": "Total", "line": {"color": "#636efa", "dash": "solid"}, "mode": "lines", "name": "Total", "orientation": "v", "showlegend": true, "type": "scatter", "x": [1970, 1980, 1991, 2000, 2010], "xaxis": "x", "y": [34124, 70643, 127455, 204316, 264210], "yaxis": "y"}, {"hovertemplate": "Situa\u00e7\u00e3o=Urbana<br>Ano=%{x}<br>Popula\u00e7\u00e3o=%{y}<extra></extra>", "legendgroup": "Urbana", "line": {"color": "#EF553B", "dash": "solid"}, "mode": "lines", "name": "Urbana", "orientation": "v", "showlegend": true, "type": "scatter", "x": [1970, 1980, 1991, 2000, 2010], "xaxis": "x", "y": [21529, 56814, 111952, 183366, 236895], "yaxis": "y"}, {"hovertemplate": "Situa\u00e7\u00e3o=Rural<br>Ano=%{x}<br>Popula\u00e7\u00e3o=%{y}<extra></extra>", "legendgroup": "Rural", "line": {"color": "#00cc96", "dash": "solid"}, "mode": "lines", "name": "Rural", "orientation": "v", "showlegend": true, "type": "scatter", "x": [1970, 1980, 1991, 2000, 2010], "xaxis": "x", "y": [12595, 13829, 15503, 20950, 27315], "yaxis": "y"}],                        {"legend": {"title": {"text": "Situa\u00e7\u00e3o"}, "tracegroupgap": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Crescimento Populacional em S\u00e3o Jos\u00e9 dos Pinhais/PR"}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "Ano"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "Popula\u00e7\u00e3o"}}},                        {"responsive": true}                    ).then(function(){
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>                <div id="c542655b-37e7-4173-9a17-f5fd38beac96" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("c542655b-37e7-4173-9a17-f5fd38beac96")) {                    Plotly.newPlot(                        "c542655b-37e7-4173-9a17-f5fd38beac96",                        [{"hovertemplate": "Situa\u00e7\u00e3o=Total<br>Ano=%{x}<br>Popula\u00e7\u00e3o=%{y}<extra></extra>", "legendgroup": "Total", "line": {"color": "#636efa", "dash": "solid"}, "mode": "lines", "name": "Total", "orientation": "v", "showlegend": true, "type": "scatter", "x": [1970, 1980, 1991, 2000, 2010], "xaxis": "x", "y": [34124, 70643, 127455, 204316, 264210], "yaxis": "y"}, {"hovertemplate": "Situa\u00e7\u00e3o=Urbana<br>Ano=%{x}<br>Popula\u00e7\u00e3o=%{y}<extra></extra>", "legendgroup": "Urbana", "line": {"color": "#EF553B", "dash": "solid"}, "mode": "lines", "name": "Urbana", "orientation": "v", "showlegend": true, "type": "scatter", "x": [1970, 1980, 1991, 2000, 2010], "xaxis": "x", "y": [21529, 56814, 111952, 183366, 236895], "yaxis": "y"}, {"hovertemplate": "Situa\u00e7\u00e3o=Rural<br>Ano=%{x}<br>Popula\u00e7\u00e3o=%{y}<extra></extra>", "legendgroup": "Rural", "line": {"color": "#00cc96", "dash": "solid"}, "mode": "lines", "name": "Rural", "orientation": "v", "showlegend": true, "type": "scatter", "x": [1970, 1980, 1991, 2000, 2010], "xaxis": "x", "y": [12595, 13829, 15503, 20950, 27315], "yaxis": "y"}],                        {"legend": {"title": {"text": "Situa\u00e7\u00e3o"}, "tracegroupgap": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Crescimento Populacional em S\u00e3o Jos\u00e9 dos Pinhais/PR"}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "Ano"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "Popula\u00e7\u00e3o"}}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('08369fa8-3467-4536-8511-954a69581bb1');
+var gd = document.getElementById('c542655b-37e7-4173-9a17-f5fd38beac96');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -423,9 +441,10 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Como se pode ver, com apenas seis linhas de código, foi possíve fazer um belo gráfico da evolução populacional de São José dos Pinhais/PR. A plotagem em si foi feita em apenas uma linha, com a função line, que recebeu o data frame a ser plotado, o nome da coluna a ser considerada no eixo x, o nome da coluna para marcação no eixo y, o nome da coluna com os valores que servirão para diferenciar a cor e, por fim, o título do gráfico.</p>
+<p>Como se pode ver, com poucas linhas de código, foi possível fazer um belo gráfico da evolução populacional de São José dos Pinhais/PR. A plotagem em si foi feita em apenas uma linha, com a função line, que recebeu o data frame a ser plotado, o nome da colunas a sere mapeadas aos eixos x, y e à cores, além do título do produto analítico. Fácil, não?</p>
 <p>Essa mesma função possui mais de 30 outros atributos para customização de tipo de linhas, rótulos, escala dos eixos, largura e altura do gráfico, tipo de linha, intervalo dos eixos, paleta de cores, animação etc. Como ela, outras dezenas de funções do Plotly Express permitem a elaboração de gráficos de área, barras, histogramas, de dispersão, tridimensionais, mapas etc.</p>
-<p>Um detalhe importante no uso da biblioteca Plotly é que ela está mais adequada para trabalhar com tabelas em formato longo (long), como foi aquela do exemplo acima, para a população de São José dos Pinhais. A tabela abaixo apresenta os mesmos dados, porém eles se encontram arranjados em formato largo (wide). Seu uso é menos intuitivo em Plotly.</p>
+<p>O mais interessante é que as funções são muito parecidas. Quer um gráfico de linhas? Função line. Precisa de um scatter plot? Função scatter. Está precisando impressionar a turma do escritório com um cartograma interativo sobre base do GoogleMaps? Função choropleth_mapbox ao seu socorro. Cada uma dessas funções, por lidar com tipos diferentes de produtos analíticos, apresenta algumas poucas opções próprias ao seu tipo de gráfico.</p>
+<p>Um detalhe importante no uso da biblioteca Plotly é que ela está mais adequada para trabalhar com tabelas em formato longo (long), como foi aquela do exemplo acima, para a população de São José dos Pinhais. A tabela abaixo apresenta os mesmos dados, porém arranjados em formato largo (wide). Aparentemente Plotly passou a aceitar recentemente o uso de tabelas <em>wide</em>, mas recomenda-se o formato <em>longo</em> por ser mais intuitivo na hora de associar as colunas aos atributos dos gráficos.</p>
 
 </div>
 </div>
@@ -437,7 +456,7 @@ if (outputEl) {{
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_wide</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../assets/data/pop_wide.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_wide</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/augustogeog/augustogeog/master/assets/data/pop_wide.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
 <span class="n">df_wide</span>
 </pre></div>
 
@@ -540,7 +559,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Isso, porém, não é um grande empecilho, uma vez que é muito fácil transformar uma tabela larga em uma tabela longa, conforme podemos ver abaixo.</p>
+<p>Isso, porém, não é um grande empecilho, uma vez que é muito fácil transformar uma tabela larga em uma tabela longa, conforme podemos ver abaixo - Pandas, seu lindo!</p>
 
 </div>
 </div>
@@ -731,7 +750,7 @@ if (outputEl) {{
 <h2 id="Explorando-o-Potencial-do-Plotly-Express">
 <a class="anchor" href="#Explorando-o-Potencial-do-Plotly-Express" aria-hidden="true"><span class="octicon octicon-link"></span></a>Explorando o Potencial do Plotly Express<a class="anchor-link" href="#Explorando-o-Potencial-do-Plotly-Express"> </a>
 </h2>
-<p>Podemos explorar um pouco mais a fundo o potencial dessa formidável API. Adiante, vamos obter dados do instituto GapMinder.</p>
+<p>Agora que temos uma leve ideia de como funciona o subpacote Express do Plotly, podemos explorar um pouco mais a fundo o potencial dessa formidável API. Adiante, vamos obter dados do instituto GapMinder:</p>
 
 </div>
 </div>
@@ -900,6 +919,14 @@ if (outputEl) {{
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Em seguida, vamos fazer um <strong><em>scatter plot</em></strong> dinâmico, que será capaz de mostrar diferentes anos pela reprodução sequencial de <em>frames</em>.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -981,10 +1008,29 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Para elaborar esse gráfico elegante, tudo o que tivemos que fazer foi chamar uma única função, scatter. Todas os atributos que precisamos alterar se encontravam dentro da função, o que se torna tudo mais fácil. Assim indicamos que o data frame a ser plotado era o df_gapminder, associamos a coluna gdpPercap ao eixo x, lifeExp ao eixo y, continent à variação de cores, pop ao tamanho dos círculos, year à animação, transformamos o eixo x em escala logarítmica, indicamos o tamanho máximo dos círculos e estabelecemos os limites inferior e superior do eixo y.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Palavra-de-Amigo">
 <a class="anchor" href="#Palavra-de-Amigo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Palavra de Amigo<a class="anchor-link" href="#Palavra-de-Amigo"> </a>
 </h2>
-<p>Depois dessa breve introdução, só resta deixar uma palavra de amigo. Adote Plotly no seu fluxo de trabalho com dados. A biblioteca é muito poderosa, intuitiva e vai valorizar muito o seus projetos!</p>
+<p>Depois dessa breve introdução, só resta deixar uma palavra de amigo: adote Plotly no seu fluxo de trabalho com dados. A biblioteca é muito poderosa, intuitiva e vai valorizar muito o seus projetos!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="PS:-I-Love-You">
+<a class="anchor" href="#PS:-I-Love-You" aria-hidden="true"><span class="octicon octicon-link"></span></a>PS: I Love You<a class="anchor-link" href="#PS:-I-Love-You"> </a>
+</h2>
+<p>Hei, Matplotlib, não fica triste. Eu sei do seu papel na comunidade. Não leva a mão o lance de te chamar de verborrágico. Com amor, Augusto.</p>
 
 </div>
 </div>
