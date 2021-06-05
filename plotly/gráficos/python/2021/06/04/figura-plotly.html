@@ -493,6 +493,7 @@ if (outputEl) {{
 <a class="anchor" href="#Embrulha-para-Viagem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Embrulha para Viagem<a class="anchor-link" href="#Embrulha-para-Viagem"> </a>
 </h2>
 <p>Vimos que Python Plotly gera especificações em forma de árvore para renderização em Plotly JS. Observamos que essas especificações são realizadas em formato JSON. Assim, notamos que as funções para geração de gráficos em Plotly, na realidade, criam Plotly Figure Objects, que são esses comandos a serem serializados em JSON. Esses objetos contêm especificações sobre data (elementos e atributos referentes ao mapeamento dos dados a elementos gráficos), layout (características gerais das figuras, como sua altura, largura, marcadores de eixos, linhas de grade, cor de fundo etc.) e Frames (raiz opcional que apresenta caracteristicas referentes a animações). Elementos não são especificados no Layout contam com atributos padrão, no nó template.</p>
+<p>Plotly conta com centenas e centenas de elementos e atributos que nos permitem fazer a customização dos nossos gráficos. Por essa razão, saber essa estrutura do Figure Object é fundamental, pois as diversas formas que temos para alterar a esses elementos correspondem a mudanças nessa estrutura de árvore. Muitas vezes, por serem tantas as possibilidades, encontrar esses elementos na árvore pode fazer toda a diferença para que possamos</p>
 
 </div>
 </div>
