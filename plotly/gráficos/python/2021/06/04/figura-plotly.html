@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -107,6 +107,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#A-importância-dos-Objetos-nos-Pacotes-do-Ecossistema-PythonData">A importância dos Objetos nos Pacotes do Ecossistema PythonData </a></li>
 <li class="toc-entry toc-h2"><a href="#Como-Plotly-Renderiza-Gráficos?">Como Plotly Renderiza Gráficos? </a></li>
 <li class="toc-entry toc-h2"><a href="#O-Plotly-Figure-Object">O Plotly Figure Object </a></li>
+<li class="toc-entry toc-h2"><a href="#Embrulha-para-Viagem">Embrulha para Viagem </a></li>
 </ul><body>
 <!--
 #################################################
@@ -337,6 +338,12 @@ if (outputEl) {{
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Isso acima, meus caros, é o Plotly Figure Object, ou seja, é esse conjunto de elementos e atributos em forma de árvore (um mero dicionário em Python, ou JSON em JavaScript) que instruem a renderização dos gráficos. Vemos que a raiz é constituída pelo por data e layout, como apresentado no exemplo com tópicos. Observe que os galhos são chaves, que indicam elementos sobre os quais se quer especificar um determinado atributo, com valores designados nas folhas, ou, nos mais externos valores desse grande objeto que mais parece um dicionário Python.</p>
+<p></p>
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">Plotly Figure Objects também contam com uma terceira raiz, Frames. Ela é opcional, no entanto e só  aparece na estrutura quando especificamos que nossos gráficos devem ser animados, como as corridas de barras que se tornaram populares no Youtube</span>
+</div>
+
 <p>De fato, a estrutura é um pouco mais complexa do que o nosso exemplo anterior. Em parte, compreender os principais caminhos dessa árvore corresponde justamente àquilo que precisamos para elaborar figuras com maior nível de personalização.</p>
 
 </div>
@@ -475,6 +482,17 @@ if (outputEl) {{
    <span class="Toast-content">É comum que a mesma coisa tenha diferentes nomes em diferentes contexto. Quando pensamos em estrutura de árvore, um determinado nó pode ser um galho. Quando pensamos em dicionários, o nome adequado é chave. Como estamos falando justamente da interface entre JavaScript, Python e plotagem de gráficos, por vezes esses termos são utilizados de maneira intercambiável</span>
 </div>
 
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Embrulha-para-Viagem">
+<a class="anchor" href="#Embrulha-para-Viagem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Embrulha para Viagem<a class="anchor-link" href="#Embrulha-para-Viagem"> </a>
+</h2>
+<p>Vimos que Python Plotly gera especificações em forma de árvore para renderização em Plotly JS. Observamos que essas especificações são realizadas em formato JSON. Assim, notamos que as funções para geração de gráficos em Plotly, na realidade, criam Plotly Figure Objects, que são esses comandos a serem serializados em JSON. Esses objetos contêm especificações sobre data (elementos e atributos referentes ao mapeamento dos dados a elementos gráficos), layout (características gerais das figuras, como sua altura, largura, marcadores de eixos, linhas de grade, cor de fundo etc.) e Frames (raiz opcional que apresenta caracteristicas referentes a animações). Elementos não são especificados no Layout contam com atributos padrão, no nó template.</p>
 
 </div>
 </div>
