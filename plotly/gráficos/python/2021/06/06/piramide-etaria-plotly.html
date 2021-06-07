@@ -128,7 +128,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#A-Pirâmide-Etária">A Pirâmide Etária </a></li>
 <li class="toc-entry toc-h2"><a href="#Obtenção-e-Tratamento-dos-Dados">Obtenção e Tratamento dos Dados </a></li>
 <li class="toc-entry toc-h2"><a href="#Criando-os-Gráficos-de-Estrutura-Etária-Separadamente">Criando os Gráficos de Estrutura Etária Separadamente </a></li>
-<li class="toc-entry toc-h2"><a href="#Gerando-Uma-Figura-com-Espaços-para-Subplots">Gerando Uma Figura com Espaços para Subplots </a></li>
+<li class="toc-entry toc-h2"><a href="#Gerando-uma-Figura-com-Espaços-para-Subplots">Gerando uma Figura com Espaços para Subplots </a></li>
 <li class="toc-entry toc-h2"><a href="#Inserindo-os-Gráficos-como-Subplots">Inserindo os Gráficos como Subplots </a></li>
 <li class="toc-entry toc-h2"><a href="#Ajustes-Finais">Ajustes Finais </a></li>
 </ul><body>
@@ -816,8 +816,8 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Gerando-Uma-Figura-com-Espaços-para-Subplots">
-<a class="anchor" href="#Gerando-Uma-Figura-com-Espa%C3%A7os-para-Subplots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gerando Uma Figura com Espaços para Subplots<a class="anchor-link" href="#Gerando-Uma-Figura-com-Espa%C3%A7os-para-Subplots"> </a>
+<h2 id="Gerando-uma-Figura-com-Espaços-para-Subplots">
+<a class="anchor" href="#Gerando-uma-Figura-com-Espa%C3%A7os-para-Subplots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gerando uma Figura com Espaços para Subplots<a class="anchor-link" href="#Gerando-uma-Figura-com-Espa%C3%A7os-para-Subplots"> </a>
 </h2>
 <p>Acima temos dois gráficos separados, mas precisamos que eles estejam lado a lado para uma adequada visualização da estrutura etária. Assim, vamos utilizar a função <strong>make_suplots</strong>, que gera uma figura com espaços separados em linhas e colunas para que possam ser associados eixos de gráficos, os subplots.</p>
 <p>Na função, vamos indicar que queremos espaço para dois subplots, em uma única linha, argumento rows, dividida em duas colunas, argumento cols. Também é preciso atribuir True ao argumento shared_yaxes, o que indica que os dois subplots compartilharão um único eixo vertical. Por fim, precisamos estabelecer que não deve haver espaçamento entre ambos os subplots - horizontal_spacing=0.</p>
