@@ -150,7 +150,14 @@ window.onload = wrap_img;
     <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
     <strong>Tip: </strong>Neste <a href="https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/04/figura-plotly.html">post</a>, há uma discussão mais ampla sobre o Plotly Figure Object e sua estrutura em árvore.
 </div>
-No entanto, embora as funções de Plotly Express sejam bastante robustas e entreguem produtos analíticos muito interessantes, por vezes precisamos descer mais no nível de abstração, para podermos criar gráficos ainda mais personalizados.
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No entanto, embora as funções de Plotly Express sejam bastante robustas e entreguem produtos analíticos muito interessantes, por vezes precisamos descer mais no nível de abstração, para podermos criar gráficos ainda mais personalizados.</p>
 <p>Primeiramente, façamos uma breve comparação dos procedimentos para criação de um gráfico com Plotly Express e com Graph Objects.
 </p>
 <div class="flash flash-warn">
@@ -564,7 +571,6 @@ if (outputEl) {{
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span> <span class="c1"># importando a função make_subplots</span>
 <span class="n">subp</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">shared_yaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># criando uma área para subplots, sem traces associados a data, e com três colunas e eixo y comum</span>
-<span class="n">subp</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span> <span class="c1"># indicando que o layout deve ter altura de 300 pixels</span>
 </pre></div>
 
     </div>
