@@ -9,15 +9,15 @@
 <meta property="og:title" content="Fazendo uma Pirâmide Etária com Plotly" />
 <meta name="author" content="Augusto dos Santos Pereira" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Rumo ao domínio dessa ferramenta arrojada!" />
-<meta property="og:description" content="Rumo ao domínio dessa ferramenta arrojada!" />
+<meta name="description" content="De quebra aprender a fazer subplots com Python" />
+<meta property="og:description" content="De quebra aprender a fazer subplots com Python" />
 <link rel="canonical" href="https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/06/piramide-etaria-plotly.html" />
 <meta property="og:url" content="https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/06/piramide-etaria-plotly.html" />
 <meta property="og:site_name" content="AugustoGeog Data Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-06-06T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/06/piramide-etaria-plotly.html","@type":"BlogPosting","headline":"Fazendo uma Pirâmide Etária com Plotly","dateModified":"2021-06-06T00:00:00-05:00","datePublished":"2021-06-06T00:00:00-05:00","author":{"@type":"Person","name":"Augusto dos Santos Pereira"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/06/piramide-etaria-plotly.html"},"description":"Rumo ao domínio dessa ferramenta arrojada!","@context":"https://schema.org"}</script>
+{"url":"https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/06/piramide-etaria-plotly.html","@type":"BlogPosting","headline":"Fazendo uma Pirâmide Etária com Plotly","dateModified":"2021-06-06T00:00:00-05:00","datePublished":"2021-06-06T00:00:00-05:00","author":{"@type":"Person","name":"Augusto dos Santos Pereira"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://augustogeog.github.io/augustogeog/plotly/gr%C3%A1ficos/python/2021/06/06/piramide-etaria-plotly.html"},"description":"De quebra aprender a fazer subplots com Python","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/augustogeog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://augustogeog.github.io/augustogeog/feed.xml" title="AugustoGeog Data Blog" /><link rel="shortcut icon" type="image/x-icon" href="/augustogeog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +72,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Fazendo uma Pirâmide Etária com Plotly</h1><p class="page-description">Rumo ao domínio dessa ferramenta arrojada!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-06T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Fazendo uma Pirâmide Etária com Plotly</h1><p class="page-description">De quebra aprender a fazer subplots com Python</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-06T00:00:00-05:00" itemprop="datePublished">
         Jun 6, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -154,11 +154,11 @@ window.onload = wrap_img;
 <h2 id="A-Pirâmide-Etária">
 <a class="anchor" href="#A-Pir%C3%A2mide-Et%C3%A1ria" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Pirâmide Etária<a class="anchor-link" href="#A-Pir%C3%A2mide-Et%C3%A1ria"> </a>
 </h2>
-<p>Frequentemente, nos meus diagnósticos para <strong>Planejamento Urbano e Regional</strong>, preciso fazer análise da <strong>estrutura etária da população</strong>, para identificar demandas por creches, escolas, trabalho e atendimento de saúde para idosos. Esse tipo de trabalho é realizado com base nas pirâmides etárias. Dada a importância desse tipo de gráfico nas análises populacionais, adiante demonstrarei como elaborá-los com Python, utilizando o pacote <a href="https://plotly.com/python/">PLotly</a>.
+<p>Frequentemente, nos meus diagnósticos para <strong>Planejamento Urbano e Regional</strong>, preciso fazer análise da <strong>estrutura etária da população</strong>, para identificar demandas por creches, escolas, trabalho e atendimento de saúde para idosos. Esse tipo de trabalho é realizado com base nas pirâmides etárias. Dada a importância desse tipo de gráfico nas análises populacionais, adiante demonstrarei como elaborá-los com Python, utilizando o pacote <a href="https://plotly.com/python/">Plotly</a>.
 </p>
 <div class="flash flash-success">
     <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
-    <strong>Tip: </strong>Veja <a href="https://www.youtube.com/watch?v=UPgR_LL0Fz0">aqui um ótimo vídeo do IBGE</a> sobre pirâmides etárias.
+    <strong>Tip: </strong>Neste texto, vamos direto ao trabalho operacional. Para saber sobre definição do que é a pirâmide etária e suas mudanças no Brasil, veja <a href="https://www.youtube.com/watch?v=UPgR_LL0Fz0">aqui um ótimo vídeo do IBGE</a>.
 </div>
 
 </div>
@@ -170,7 +170,7 @@ window.onload = wrap_img;
 <h2 id="Obtenção-e-Tratamento-dos-Dados">
 <a class="anchor" href="#Obten%C3%A7%C3%A3o-e-Tratamento-dos-Dados" aria-hidden="true"><span class="octicon octicon-link"></span></a>Obtenção e Tratamento dos Dados<a class="anchor-link" href="#Obten%C3%A7%C3%A3o-e-Tratamento-dos-Dados"> </a>
 </h2>
-<p>Os dados sobre população segundo faixas etárias foram obtidos na base <a href="https://sidra.ibge.gov.br/Tabela/200">SIDRA</a> do IBGE armazenados no arquivo estruturaetaria.csv. Vamos carregar os dados em Pandas DataFrame e observar o seu conteúdo.</p>
+<p>Sempre penso no meu fluxo de trabalho analítico como obtenção, tratamento, análise e dados e divulgação de resultados. Aqui não será diferente. Então vamos começar pela obtenção e tratamento. Assim, os dados sobre população de São José dos Pinhais/PR, segundo faixas etárias, foram obtidos na base <strong><a href="https://sidra.ibge.gov.br/Tabela/200">SIDRA</a></strong> do IBGE e armazenados no arquivo estruturaetaria.csv. Vamos carregar os dados em Pandas DataFrame e observar o seu conteúdo.</p>
 
 </div>
 </div>
@@ -299,7 +299,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos ver que a tabela se encontra em formato largo, com cada variável, faixa etária, representada por uma coluna. Para trabalharmos com Plotly, é mais adequado transformarmos o DataFrame em formato longo, com uma coluna chamada faixa, que conterá cada faixa etária correspondente ao respectivo montante populacional. Para tanto, podemos utilizar o método <em>melt</em>, para fazer essas alterações.</p>
+<p>Podemos ver que a tabela se encontra em formato largo, com cada variável, grupo etário, representada por uma coluna. Para trabalharmos com Plotly, é mais adequado transformarmos o DataFrame em formato longo, com uma coluna chamada faixa, que conterá cada faixa etária correspondente ao respectivo montante populacional. Para tanto, podemos utilizar o método <em>melt</em>, para fazer essas alterações.</p>
 
 </div>
 </div>
@@ -312,8 +312,31 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_estrutura_etaria</span> <span class="o">=</span> <span class="n">df_estrutura_etaria</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'Codmun'</span><span class="p">,</span> <span class="s1">'Sexo'</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">'Faixa'</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">'População'</span><span class="p">)</span>
+</pre></div>
 
-<span class="n">df_estrutura_etaria</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># chamando as dez primeiras linhas</span>
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Vejamos as dez primeiras linhas do DataFrame resultante.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_estrutura_etaria</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># chamando as dez primeiras linhas</span>
 </pre></div>
 
     </div>
@@ -452,8 +475,31 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_estrutura_etaria_f</span> <span class="o">=</span> <span class="n">df_estrutura_etaria</span><span class="p">[</span><span class="n">df_estrutura_etaria</span><span class="p">[</span><span class="s1">'Sexo'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Feminino'</span><span class="p">]</span>
 <span class="n">df_estrutura_etaria_m</span> <span class="o">=</span> <span class="n">df_estrutura_etaria</span><span class="p">[</span><span class="n">df_estrutura_etaria</span><span class="p">[</span><span class="s1">'Sexo'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Masculino'</span><span class="p">]</span>
+</pre></div>
 
-<span class="n">df_estrutura_etaria_f</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Adiante estão as dez primeiras linhas para o DataFrame com a população do sexo feminino.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_estrutura_etaria_f</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -587,7 +633,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O primeiro passo a fazer é importar a função make_subplots, pois faremos um gráfico com dois eixos. Também é preciso importar plotly express, API de alto nível de abstração que permite fazer gráficos com apenas uma função, além de Plotly Graph Objects, subpacote que apresenta maior de</p>
+<p>Agora que temos os dados na estrutura certa, precisamos importar a função <strong>make_subplots</strong>, pois faremos um gráfico com dois pares de eixos, ou seja, dois subplots. Também é preciso importar <strong>Plotly Express</strong>, API de alto nível de abstração que permite fazer gráficos com apenas uma função.</p>
 
 </div>
 </div>
@@ -613,7 +659,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A lógica que vamos adotar para produzir esse gráfico é produzir dois gráficos distintos e colocá-los em justaposição, lado a lado, como subplots de uma outra figura. Para tanto, vamos fazer o primeiro gráfico de barras, com a função bar do subpacote plotly express. Essa função apresenta vários argumentos nos quais podemos avançar significativamente na empreitada. Vamos indicar que o Data Frame a ser considerado deve ser aquele para a estrutura etária feminina, que a coluna para o eixo x deve ser População, a coluna para o eixo y deve ser Faixa, as cores devem ser associadas à coluna Sexo, a orientação do gráfico deve ser horizontal, a cor para o sexo feminino deve ser vermelha, segundo padrão rgb, e o modo das barras deve ser de sobreposição, overlay.</p>
+<p>A lógica que vamos adotar para produzir esse gráfico é produzir dois gráficos distintos e colocá-los em justaposição, lado a lado, como subplots de uma outra figura. Para tanto, vamos fazer o primeiro gráfico de barras, com a <strong>função bar</strong> do subpacote Plotly Express. Essa função apresenta vários argumentos nos quais podemos avançar significativamente no desenvolvimento do produto analítico. Vamos indicar que o Data Frame a ser considerado deve ser aquele para a estrutura etária feminina, que a coluna para o eixo x deve ser População, a coluna para o eixo y deve ser Faixa, as cores devem ser associadas à coluna Sexo, a orientação do gráfico deve ser horizontal e a cor para o sexo feminino deve ser vermelha, segundo padrão rgb.</p>
 
 </div>
 </div>
@@ -631,8 +677,7 @@ window.onload = wrap_img;
     <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Faixa'</span> <span class="c1"># associação da coluna Faixa ao eixo y</span>
     <span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'Sexo'</span> <span class="c1"># associação da coluna Sexo a cor</span>
     <span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">'h'</span> <span class="c1"># seleção da orientação horizontal</span>
-    <span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">'Feminino'</span><span class="p">:</span><span class="s1">'rgb(228, 26,28)'</span><span class="p">}</span> <span class="c1"># mapeamento da cor vermelha ao sexo feminino</span>
-    <span class="p">,</span> <span class="n">barmode</span><span class="o">=</span><span class="s1">'overlay'</span><span class="p">)</span> <span class="c1"># escolha de barras em modo sobreposto</span>
+    <span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span><span class="s1">'Feminino'</span><span class="p">:</span><span class="s1">'rgb(228, 26,28)'</span><span class="p">})</span> <span class="c1"># mapeamento da cor vermelha ao sexo feminino</span>
 
 <span class="n">plot_fem</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># fazendo a renderização do gráfico com o método show</span>
 </pre></div>
@@ -692,7 +737,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Agora vamos fazer o mesmo para os dados da população de sexo masculino.</p>
+<p>Agora vamos fazer o mesmo para os dados da população de sexo masculino. A única diferença é que não vamos escolher uma cor específica e ficar com aquela que for aplicada por padrão pela função.</p>
 
 </div>
 </div>
@@ -709,8 +754,7 @@ if (outputEl) {{
     <span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'População'</span> <span class="c1"># associação da coluna População ao eixo x</span>
     <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Faixa'</span> <span class="c1"># associação da coluna Faixa ao eixo y</span>
     <span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'Sexo'</span> <span class="c1"># associação da coluna Sexo a cor</span>
-    <span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">'h'</span> <span class="c1"># seleção da orientação horizontal</span>
-    <span class="p">,</span> <span class="n">barmode</span><span class="o">=</span><span class="s1">'overlay'</span><span class="p">)</span> <span class="c1"># escolha de barras em modo sobreposto</span>
+    <span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">'h'</span><span class="p">)</span> <span class="c1"># seleção da orientação horizontal</span>
 
 <span class="n">plot_masc</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -773,8 +817,8 @@ if (outputEl) {{
 <h2 id="Gerando-Uma-Figura-com-Espaços-para-Subplots">
 <a class="anchor" href="#Gerando-Uma-Figura-com-Espa%C3%A7os-para-Subplots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gerando Uma Figura com Espaços para Subplots<a class="anchor-link" href="#Gerando-Uma-Figura-com-Espa%C3%A7os-para-Subplots"> </a>
 </h2>
-<p>Acima temos dois gráficos separados, mas precisamos que eles estejam lado a lado para uma adequada visualização da estrutura etária. Assim, vamos utilizar a função make_suplots, que gera uma figura com espaços separados em linhas e colunas para que possam ser associados eixos de gráficos, os subplots.</p>
-<p>Na função, vamos indicar que queremos espaço para dois subplots, em uma única linha, argumento rows, dividida em duas colunas, argumento cols. Também é preciso que o argumento shared_yaxes atribuído o valor True, o que indica que os dois subplots compartilharão um único eixo vertical. Por fim, precisamos estabelecer que não deve haver espaçamento entre ambos os subplots - horizontal_spacing=0.</p>
+<p>Acima temos dois gráficos separados, mas precisamos que eles estejam lado a lado para uma adequada visualização da estrutura etária. Assim, vamos utilizar a função <strong>make_suplots</strong>, que gera uma figura com espaços separados em linhas e colunas para que possam ser associados eixos de gráficos, os subplots.</p>
+<p>Na função, vamos indicar que queremos espaço para dois subplots, em uma única linha, argumento rows, dividida em duas colunas, argumento cols. Também é preciso atribuir True ao argumento shared_yaxes, o que indica que os dois subplots compartilharão um único eixo vertical. Por fim, precisamos estabelecer que não deve haver espaçamento entre ambos os subplots - horizontal_spacing=0.</p>
 
 </div>
 </div>
@@ -877,7 +921,7 @@ if (outputEl) {{
 <h2 id="Inserindo-os-Gráficos-como-Subplots">
 <a class="anchor" href="#Inserindo-os-Gr%C3%A1ficos-como-Subplots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inserindo os Gráficos como Subplots<a class="anchor-link" href="#Inserindo-os-Gr%C3%A1ficos-como-Subplots"> </a>
 </h2>
-<p>Precisamos inserir os dois plots elaborados primeiramente, plot_fem e plot_masc, no espaço criado para elas na figura fig. Para podermos fazer isso, precisamos entender a estrutura desses objetos. Vamos começar com a figura fig.</p>
+<p>Precisamos inserir os dois plots elaborados primeiramente, plot_fem e plot_masc, no espaço criado para eles na figura fig. Para podermos fazer isso, devemos entender a estrutura desses objetos. Vamos começar com a figura fig.</p>
 
 </div>
 </div>
@@ -923,15 +967,9 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Notamos acima que fig é um objeto Plot Figure, uma série de instruções em forma de árvore, como um dicionário, que apresenta nos dados, data, uma lista vazia, ou seja, nenhum dado, ao passo que tem um layout com espaço para dois subplots, o primeiro formado pelos eixos x e y, e o segundo formado pelos eixos x2 e y2. O primeiro subplot toma metade do espaçamento horizontal da figura (0.0 a 0.5), e o segundo indo de 0.5, metade do eixo horizontal, até o o ponto mais a direita, 1.0. Por essa razão, o que precisamos inserir aqui são os valores que devem ir em data, ou seja, o mapeamento dos dados aos respectivos eixo e cores.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Vejamos agora o que é o objeto plot_fem</p>
+<p>Notamos acima que fig é um objeto <strong>Plot Figure</strong>, uma série de instruções em forma de árvore, como um dicionário, que apresenta, na chave <strong>data</strong> (dados), uma lista vazia, ou seja, nenhum dado, ao passo que tem um <strong>layout</strong> com espaço para dois subplots, o primeiro formado pelos eixos x e y, e o segundo formado pelos eixos x2 e y2. O primeiro subplot toma metade do espaçamento horizontal da figura (0.0 a 0.5), e o segundo indo de 0.5, metade do eixo horizontal, até o o ponto mais a direita, 1.0. Por essa razão, o que precisamos inserir aqui são os valores que devem ir em data, ou seja, o mapeamento dos dados aos respectivos eixo e cores.</p>
+<p>É importante lembrar que data não se refere somente aos dados tabulares, mas à sua codificação a atributos gráficos, indicando que dado estará mapeado no eixo x, qual dado estará mapeado ao eixo y, às cores e assim por diante, ainda com a especificação de atributos desses elementos gráficos (cores específicas de conjunto de barras, por exemplo). Em Plotly, essa estrutura de mapeamento de dados a suas representações gráficas é chamada de <strong>traces</strong>.</p>
+<p>Vejamos agora o que é o objeto plot_fem.</p>
 
 </div>
 </div>
@@ -996,7 +1034,8 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nota-se que o plot_fem também é um objeto Plotly Figure, com especificação de data e de layout. Por essa razão, não podemos simplesmente inserir plot_fem como um subplot de fig. Cada um apresenta seu próprio layout. O que precisamos é passar apenas os valores da chave data, que pode ser acessada pela notação de recuperação de dados de dicionário plot_fem['data'][0]. Fazemos isso, com o método add_traces, chamado no objeto fig, indicando em que linha, row, e coluna, esses traços, valores de data, devem ser inseridos.</p>
+<p>Nota-se que o plot_fem também é um objeto <strong>Plotly Figure</strong>, com especificação de <strong>data</strong> e de <strong>layout</strong>. Por essa razão, não podemos simplesmente inserir plot_fem como um subplot de fig. Cada um apresenta seu próprio layout. O que precisamos é passar apenas os valores da chave data, que pode ser acessada pela notação de recuperação de dados de dicionário plot_fem['data'][0].</p>
+<p>Assim, podemos utilizar o método add_traces, chamado no objeto fig, indicando em que linha, row, e coluna, cols, esses traces devem ser inseridos.</p>
 
 </div>
 </div>
@@ -1078,7 +1117,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Estamos quase lá. Precisamos fazer alguns ajustes. O eixo x da primeira figura precisa ter seu sentido revertido.</p>
+<p>Estamos quase lá. Precisamos fazer alguns ajustes. O eixo x da primeira figura precisa ter seu sentido invertido.</p>
 
 </div>
 </div>
@@ -1154,14 +1193,6 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos observar o podemos observar o esquema da figura para saber como fazer a alteração.</p>
-
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1229,7 +1260,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Agora podemos tirar as legendas, inserir títulos de eixos x, inserir o título do gráfico</p>
+<p>Agora podemos tirar as legendas, inserir títulos de eixos x, além de inserir o título do gráfico.</p>
 
 </div>
 </div>
@@ -1247,7 +1278,7 @@ if (outputEl) {{
 <span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Feminino'</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">xaxis2</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Masculino'</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'&lt;b&gt;Pirâmide Etária&lt;b&gt;'</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'&lt;b&gt;Pirâmide Etária de São José dos Pinhais - 2010&lt;b&gt;'</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1304,6 +1335,14 @@ if (outputEl) {{
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Agora está pronto! Basta entrar no site do <a href="https://sidra.ibge.gov.br/">Sidra</a>, baixar dados de outros municípios e replicar o código que ele funcionará para qualquer município brasileiro. Lembre-se que ao clicar nos links do Colab ou do Binder no início da postagem, uma versão interativa da postagem pode ser acessada, para que você possa avançar nas customizações desse gráfico.</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
