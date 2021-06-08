@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -106,6 +106,7 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#A-Trilogia">A Trilogia </a></li>
 <li class="toc-entry toc-h2"><a href="#Plotly-IO">Plotly IO </a></li>
+<li class="toc-entry toc-h2"><a href="#Plotly-Figure-Factory">Plotly Figure Factory </a></li>
 </ul><body>
 <!--
 #################################################
@@ -151,7 +152,7 @@ vimos que <strong>Plotly Data</strong> apresenta funções para carregamento de 
 </h2>
 <p>IO é uma sigla bastante recorrente em tecnologias computacionais. Refere-se a input e output. Nas bibliotecas do ecossistema Python para tecnologias de dados, IO usualmente se refere a importação e exportação de dados. Assim, no subpacote <strong>Plotly IO</strong>, temos diversas funções para importar e exportar dados estruturados para formação de Plotly Figures, com suas instruções para renderização de gráficos, cartogramas e diagramas.</p>
 <p>Plotly IO apresenta funções para que possamos exportar os nossos gráficos para formatos de imagem (pio.write_image), para html (pio.write_html) e json (pio.write_json). O subpacote ainda nos permite escolher qual o tema padrão para <em>template</em>, ou seja, a aparência geral dos gráficos (<code>pio.templates.default = 'ggplot2'</code>, por exemplo, faz com que os gráficos tenha aparência do pacote mais utilizado em linguagem R). No namespace IO podemos também escolher o renderizador a ser utilizado (<code>pio.renderers.default = 'plotly_mimetype+notebook'</code>, para Jupyter Notebooks, e <code>pio.renderers.default = 'colab'</code> para Google Colab, por exemplo).</p>
-<p>Vejamos adiante como exportar os gráficos em formato JSON e HTML, o que pode ser útil para lançamento de serviços <em>web</em>. Como sempre, primeiramente vamos importar as bibliotecas necessárias. Em seguida vamos utilizar a função wind() do subpacote data para obter um Pandas DataFrame com dados sobre direção e velocidade dos ventos. Veremos, também, as primerias seis linhas do DataFrame.</p>
+<p>Vejamos adiante como exportar os gráficos em formato <strong>HTML</strong> e <strong>JSON</strong>, o que pode ser útil para lançamento de serviços <em>web</em>. Como sempre, primeiramente vamos importar as bibliotecas necessárias. Em seguida vamos utilizar a função wind() do subpacote data para obter um Pandas DataFrame com dados sobre direção e velocidade dos ventos. Veremos, também, as primerias seis linhas do DataFrame.</p>
 
 </div>
 </div>
@@ -260,8 +261,8 @@ vimos que <strong>Plotly Data</strong> apresenta funções para carregamento de 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Agora vamos elaborar um gráfico de <strong><a href="https://content.meteoblue.com/pt/dimensoes-temporais/history/rosa-dos-ventos">rosa dos ventos</a></strong>, com a função bar_polar do Plotly Express. Chamamos a função, indicamos qual será o DataFrame, indicamos que o raio, r, é dado pela frequência dos ventos, que o ângulo theta representará a direção, que a cor deve representar a força dos ventos.</p>
-<p>Uma vez que a coluna força, <em>strength</em>, apresenta valor textual no DataFrame, as cores serão atribuídas pelo Plotly para variáveis categórias. Nós sabemos, no entanto, que os textos apresentam intervalos de força (0-1, 1-2, 2-3, 3-4, 4-4, 4-5, 5-6, 6+), que são mais bem representados com cores em paleta sequencial. Por essa razão, vamos indicar que a sequência de cores discretas deverá ser igual à paleta de cores sequenciais em vermelho.</p>
+<p>Agora vamos elaborar um gráfico de <strong><a href="https://content.meteoblue.com/pt/dimensoes-temporais/history/rosa-dos-ventos">rosa dos ventos</a></strong>, com a função bar_polar do Plotly Express. Chamamos a função, apontamos qual será o DataFrame, indicamos que a amplitude da barra no raio, r, é dada pela frequência dos ventos, que o ângulo theta representará a direção e que a cor deve representar a força dos ventos.</p>
+<p>Uma vez que a coluna força, <em>strength</em>, apresenta valor textual no DataFrame, as cores serão atribuídas pelo Plotly para variáveis categórias, que não dão ideia de gradação. Nós sabemos, no entanto, que os textos apresentam intervalos de força (0-1, 1-2, 2-3, 3-4, 4-4, 4-5, 5-6, 6+), que são mais bem representados com cores em paleta sequencial. Por essa razão, vamos indicar que a sequência de cores discretas deverá ser igual à paleta de cores sequenciais em vermelho.</p>
 
 </div>
 </div>
@@ -340,7 +341,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos precisar importar esse gráfico em um ambiente no qual não teremos a possibilidade de utilizar Pandas e Plotly da maneira como fizemos até aqui, por restrição de memória, ou incompatibilidades com as ferramentas em uso, por exemplo. Nesse caso, pode ser aconselhável exportar a figura renderizada para HTML e incorporá-la à página por meio dessa linguagem de marcação. Vejamos como transformar o gráfico em HTML e como esse objeto pode ser renderizado em Jupyter Notebooks.</p>
+<p>Podemos precisar importar esse gráfico em um ambiente no qual não teremos a possibilidade de utilizar Pandas e Plotly da maneira como fizemos até aqui, por restrição de memória, ou incompatibilidades com as ferramentas em uso, por exemplo. Nesse caso, pode ser aconselhável exportar a figura renderizada para HTML e incorporá-la à página por meio dessa linguagem de marcação. Vejamos como transformar o gráfico em HTML.</p>
 
 </div>
 </div>
@@ -406,7 +407,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Outra maneira de garantirmos interoperabilidade, é exportarmos a figura para JSON, para renderizá-la posteriormente.</p>
+<p>Outra maneira de garantirmos interoperabilidade, é exportarmos a figura para JSON, para renderizá-la posteriormente com Plotly Python, ou mesmo com Plotly JavaScript.</p>
 
 </div>
 </div>
@@ -418,9 +419,9 @@ if (outputEl) {{
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig_json</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig_json</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span> <span class="c1"># transformando a figura em JSON</span>
 
-<span class="n">fig_json</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span>
+<span class="n">fig_json</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span> <span class="c1"># exibindo os 500 primeiros caracteres do JSON</span>
 </pre></div>
 
     </div>
@@ -449,15 +450,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Agora podemos utilizar as funções display e HTML para podermos renderizar o objeto fig_html.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Há muito mais que pode ser feito com PIO, mas aqui o importante é entendermos o que podemos encontrar nesse subpacote. Isso vai nos ajudar na hora que precisarmos importar e exportar dados com Plotly.</p>
+<p>Vejamos abaixo como Plotly IO importa os dados JSON e renderiza o gráfico.</p>
 
 </div>
 </div>
@@ -524,6 +517,31 @@ if (outputEl) {{
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Com o que discutimos até aqui, já dá para termos uma boa ideia do que se pode fazer com Plotly IO. Assim, vejamos adiante o que é o Plotly Figure Factory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plotly-Figure-Factory">
+<a class="anchor" href="#Plotly-Figure-Factory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plotly Figure Factory<a class="anchor-link" href="#Plotly-Figure-Factory"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Há muito mais que pode ser feito com PIO, mas aqui o importante é entendermos o que podemos encontrar nesse subpacote. Isso vai nos ajudar na hora que precisarmos importar e exportar dados com Plotly.</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
