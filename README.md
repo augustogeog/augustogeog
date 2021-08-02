@@ -31,4 +31,5 @@ _powered by [fastpages](https://github.com/fastai/fastpages)_
   <img align="center" alt="Streamlit" height="30" src="https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png">
   <img align="center" alt="Plotly" height="30" src="https://getlogovector.com/wp-content/uploads/2020/09/plotly-logo-vector.png">
   <img align="center" alt=Geopandas" height="30" src="https://geopandas.readthedocs.io/en/latest/_images/geopandas_logo.png">
+  ![Snake animation](https://github.com/augustogeog/augustogeog/blob/output/github-contribution-grid-snake.svg)
 </div>
