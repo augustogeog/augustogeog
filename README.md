@@ -25,5 +25,5 @@ _powered by [fastpages](https://github.com/fastai/fastpages)_
   <img align="center" alt="Jupyter" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/jupyter/jupyter-original-wordmark.svg">
   <img align="center" alt="Pandas" height="30" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg">
   <img align="center" alt="Streamlit" height="30" src="https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png">
-  <img align="center" alt="Plotly" height="30" src="https://getlogovector.com/wp-content/uploads/2020/09/plotly-logo-vector.png">
+  <img align="center" alt="Plotly" height="30" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png">
 </div>
